@@ -1,0 +1,27 @@
+##############################
+# Central Crystal Events
+# by Joachim
+##############################
+
+namespace = central
+
+# Start Events
+event = {
+	id = central.1
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = {
+			has_origin = origin_void_dwellers
+		}
+	}
+
+	immediate = {
+		random = {
+			chance = 1
+			set_global_flag = central_crystal_flag
+		}
+	}
+}

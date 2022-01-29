@@ -1,0 +1,290 @@
+New Origins:
+- From Ashes, Machine's creators destroyed themselves, leaving their robots to pick up the pieces, starts on tomb world, get unique event chains that give rewards, model on Shoulder of Giants
+	- Destroyed from War
+	- Destroyed from Environmental Disaster
+	- Destroyed from Cataclysmic Event
+- Precursor Archive, made it to space after reverse engineering tech from old library left in system, starts with large research deposit on world and a dig site
+	("Although our researchers have been studying the archival ruins for decades, we have still explored only a tiny fraction of the entire complex")
+- ???, homeworld locked behind a shield. Why? How do you get out?
+- ???, monolith (aka 2001 space odyssey)
+- ???, starts next to a hostile empire (usually homicidal, sometimes despoilers), challenging origin, starts with 20 corvettes, but so does your rival
+- Fratricide, requires xenophobe, start with tomb world of alien race you murdered, unique events, starts with a random weapon tech, and maybe first army tech
+	- Maybe enemy species survived, holds a grudge (terrorism, assassinations, ext)
+	- Maybe find unfired superweapon enemy tried to use against you
+
+Changed Origins:
+- Galactic Doorstep, more events, anomalies, and dig sites
+	- Find old gate-builder ship or station
+- Remnants get expanded colony events, find remnants of their old empire on other worlds, may spawn special systems
+	- events and anomalies related to what destroyed your world
+- Doomsday, death cultists, cannot be resettled, may do a terrorism
+
+New Anomalies (random):
+- Find ancient FE ship, study it, try to restore it, return it to FE in hopes of a reward
+- discover stone-age primitives on world, presence wasn't obvious (what, if anything, is special about them?)
+- find probe from your own species (non-human) (machine find probe from their makers)
+- anomaly making fun of Jordan Peterson's 12 rules for life
+- more anomalies for UHB_MOLTEN_CHART_CAT (distress signal from molten world)
+- restore anomaly.6000 (rogue moon)
+- restore anomaly.4000 (alien refugees, will need to remake from scratch)
+- anomaly_failure.2645, singing animals, project to find out why ship disappeared
+
+New Anomalies (game start):
+- Find old star that was kept artificially alive beyond its time, but machinery is failing and it will soon explode (probably spawn with a gaia world, so player wants to try to save it, will probably require real space for supernova)
+
+Changed Anomalies:
+- anomaly.1, follow-up find fossils of space monster that left that giant fossilized poop (requires biology leader trait or chance when claiming systems)
+- anomaly.60, scientist able to identify source of radiation that bombarded asteroid (requires particles trait)
+- anomaly.115, use genetic material to bring back some animals back to life (requires biology or maniacal trait)
+- anomaly.330 (extreme storms) follow-up: what is causing the storms?
+- Add positive and negative media coverage gain to various anomalies and events
+- Xenophiles leak existence of brain slugs
+-If enough pops become brain slugs, may influence your empire to become more pacifist and/or xenophile
+
+New Dig Sites (random):
+- Old Galactic Market, rewards trade tech for regular, + energy modifier for gestalts (or maybe + diplo weight from economy?)
+- (technology breakthrough) something stuck in time, unlocks tech_field_manipulation_breakthrough
+- find evidence of past civ that used zro to get high and get "visions of the universe", gives special zro-using edict that gives +10% research(???), not available to gestalts
+- Find remains of a cute-looking fanatical purifier that was surrounded by vastly technologically superior neighboring empires. Unable to purify through conquest, they resorted to drastic measures, ultimately wiping themselves out.
+- Find ant mounds left by pre-ftl insectoids
+
+New Dig Site (game-start):
+- Precursors who made a deal with the Eater of Worlds, fed it slaves to sate it, did not save them in the end (world shrouded)
+- Primitives actually the remant of an interstellar empire
+- Find vaults of alien tech (borderlands)
+- Find primitives of your species, along side another species. How did they get there?
+- Primitive homeworld once colony of more advanced empire (similar to On the Shoulders of Giants)
+
+New Dig Sites (tech):
+- Last 2 energy techs: something on planet becomes quantumly entangled with power plants, leads to discovery of a hidden lab
+- Gateway techs or l-gate repeatable: something gateway and nanite related, gives l-gate insight among other rewards
+
+
+Old Dig Sites:
+(all events are ancrel.xxxx unless stated otherwise)
+invaders can investigate sentinels if previous owner did not
+invaders can open sentinel tomb if sentinel armies are killed
+
+Aliens
+	- 109, follow-up, extra-dimensional nomads sounds a lot like unbidden
+		- chance to find evidence of a "those-who-resist" colony when clearing tile blockers or building districts. Burried under rubble and fire-heated clay, indicating mass destruction.
+Shot into the Ground
+	- 9090, possible follow-up with space monster
+Anyone Home
+	- 9265, spawns a primitive hive mind race of fungoids after some long span of time, dies off again after several hundred years
+Get to the Bottom
+	- 9350, what is stored away here? (TBD)
+Popular World
+	- 9390, when research station built, chance to find the 10th step by special project, 12 steps total:
+		- 10th step: Now the lair of pirates or some other space creature
+		- 11th step: System close to going supernova (will do so with Real Space active)
+		- final step: a miraculous gaia world (50% chance of being a holy world or colonized by primitives)
+The Library
+	- unique interactions with the Curators
+
+
+Galaxy Generation
+- System full of old Materialist FE drones that have gone berserk, if destroyed the FE thanks you for cleaning up their mess (or scolds you for interfering with an ongoing experiment)
+	- system gives nanites, drones use grey tempest ships
+
+
+Crisis Events
+- Gray Tempest:
+	- If curator or tech, will periodically give military techs (primarily alloy, shield, and point-defense techs) to those who do not have them
+		- sell exotic gas production, asks you not to tell XuraCorp, as they are surprisingly litigious
+	- If gatebuilders, after crisis can be traded with
+- Swarm:
+	- Develop a bioweapon effective against the swarm
+	- After: shield galaxy from hunters, if failed, spawns impossibly strong star eaters (like stellerite devourers, but larger?), eats stars, causing systems to disappear
+- Contingency:
+	- Upload virus that makes contingency hostile with itself (some of their fleets joins the cybrex?), or generally confused
+	- After: backlash against synths, might cause new problems
+- Unbidden:
+	- Psionics can develop advantages against them
+	- After: strengthen interdimensional barriers to prevent further incursions
+	
+
+Fallen Empire Events
+- FE gives "White Elephant" gift that is not as useful as it first appears (gift varies by FE)
+	- Materialist: experimental tech
+	- Spiritualist:
+	- Xenophile: gives bad pops to take care of, with unique trait that is bad at most things
+	- Machine: device to block <<<ERROR: DATA BLOCK CORRUPTED>>> signals, decreases robot job output, might actually help against the ghost signal (or might not)
+- If you have a holy world in your borders, Spiritualist FE claims that your governor denied their pilgrim's passage to holy world, demands governor be fired
+- Spiritualist FE rewards you for destroying robot empire
+- If Spiritualist FE is patronizing, may invite a random leader to attend one of their rituals, leader comes back with the psionic trait
+- Once you've researched certain milestone technologies, the Materialist FE may invite you to participate in some wild and probably unethical experiments
+	- alternate dimensions (increases chance of unbidden)
+	- dark matter
+	- experiments on weird lifeforms
+- Xenophile FE tourists make a nuisance of themselves. Xenophobes are especially annoyed, while gestalts are generally confused by their antics
+- Materialists demand you stop researching a dangerous technology (player only)
+- Xenophobe FE will rarely ask you to wage war on rival with xeno-compatability, will give a reward if you attack (no opinion boost), angry if you do not
+- If you have 50k+ fleet power and are neighboring the Xenophobe FE's neutral zone, they may get paranoid and accuse you of suspicious ship movements near their border, demand you allow them to send observers to your fleet, giving malus to fire rate and sublight speed for a year
+- Attacking machine FE will mark you as their rival, they assume you are allied with or have been corrupted by the contingency
+- If FE loses too many ships, will fire up shipyards to replenish fleet. Chance of awakening each time this happens
+- FE may awaken as protectors against player crisis (especially against player-controlled crisis)
+- Spiritualists Fe get upset if you terraform a holy world (especially to a machine world)
+- Spiritualist Fe gets feels betrayed if Zarqan's prophet destroys a holy world
+
+Country Events
+Old Events:
+- Have cultists build ships and fling them at your empire
+- Helpful drone pirates will steal pops and resources
+- Helpful drone pirates may attack elsewhere, sending only a token force to the original planet as a feint
+
+- New Events:
+- Midgame robot-related event that makes the contingency more likely, in similar vein to (and exclusive with) the unbidden-related wanderer event
+	- droids start disappearing, drawn to old contingency beacon
+- Midgame Crisis: Pandemic
+- Imperial coup events (replaces emperor and kills heir)
+	- requires a powerful but unhappy faction, who's leader is not the ruler
+	- lead up events showing the faction is discontent, 
+- Authoriarian coups and egalitarian revolts, requires powerful but unhappy factions
+	- coups, authoritarian, xenophobe, militarist, spiritualist (unless pacifist, xenophile, or egalitarian)
+	- revolts, egalitarian, xenophile, pacifist, spiritualist (if pacifist or xenophile), manifesti (unreliable allies)
+- Life Seeded, find evidence of who life seeded you
+- when researching wormhole stabilization, chance to detect faded wormhole within borders (what happened? TBD)
+- Repugnant species performs some sort of faux pas (gift of rotten meat, ext)
+- Authoriarian president refuses to step down
+- Matrix-like revolt against machine empires using matrix purge or slavery
+- Unhappiness during offensive war with high war exhaustion
+- Old nuclear power planet on homeworld goes nuclear (happens in first 100 years, or not at all)
+- Synth Warning Signs:
+	- Negotiate synth rights (forces ai citizen rights if you side with robots)
+	- Army refuses to fight (deletes several robot armies)
+- While researching jump drive, test ship disappears into unbidden's realm, crew comes back mad or eaten, increases chance of unbidden
+- Aliens sue for citizen rights
+
+After researching Gene Tailoring, non-humans may learn that race was genetically modified by aliens
+Source:
+Nearest FE (non-gestalt)
+	Xenophobes were slavers
+	Xenophiles just wanted to uplift us
+	Materialists just wanted to see if they could do it
+	Spiritualists, caused division in the empire about "playing god," abandoned afterwards
+Dead Civ
+	Slavers
+	Xenophiles
+	Trying to save their dying race
+	Wanted to see if they could
+	Wanted to play god
+	
+
+Colony Events:
+Old Events:
+- Rewrite infection event
+
+- Discover ancient immortal guru
+- Colony terrorized by a dragon (or "dragon")
+- Investigate odd factory
+- Tension from alien pops in empire with opposite ethics
+- Problems with the electrical grid, temporarily causes problems
+- Find ancient detector trying to detect cosmic neutrinos (neutrino background radiation, can be used to learn about the big bang itself)
+- barrier to shroud thinner on this world, pops may become psionic, starts with finding zro deposit on world
+- Tree of Life (and equivalents from Expanded Pops), Ferngully event (release evil spirit from tree if tree removed, or capture such a spirit into a tree)
+- Psionic ghosts of planet's previous inhabitants, starts with electronic noise
+- Predacious plantlife eats govenor (or someone else important)
+- Predacious plantlife eats science team (temp science debuff)
+
+Dimensional Portal Follow-Up
+- Hell portal corrupts researchers. Hive minds especially vulnerable, machines get corrupted
+
+Crime Events
+- Psionic Supervillian and Superhero
+- Prison Break
+- Hallucinagetic atmosphere drug ring, disappears if hallucinagetic atmosphere modifier removed
+- Hallucinagetic atmosphere does a number on hive pops, disappears if hallucinagetic atmosphere modifier removed
+- Trouble with individualist enclave (requires expanded pops)
+- Deal with Crime Lord events
+	- want a better deal
+	- new rival gang threatens current deal
+	- Righteous governor tries to stamp out crime, potentially threatening crime lord deal
+- has_system_trade_value now exists, can add crime based on large volumes of trade passing through
+- high crime spawns vigilantes, lowers crime but also stability
+	
+When invading primitives, might be wiped out by disease, war of the worlds style
+	
+Unrest Events
+- Slave kills master, starts small revolt and inspires other slaves (- stability)
+- discover evidence of slave revolts, quash it (+stability)
+- domestic slave poisons prominent individual (governor, ext)
+- Slaves help non-slaver enemies in a war
+- Slave revolts ask for aid from non-slavers. More aid = more ships
+- Moses story (let my people go)
+- Low stability with livestock slaves or purges, get special revolt events, especially with hive minds
+
+Enclaves (all curator stuff will go into this mod)
+
+Primitive Events:
+- Bronze Age Collapse
+- Find evidence of observation post from a different civ
+- Civilian ship crashes, risks exposure
+- Explore solar system, could detect you
+- Earthquake disrupts major civ
+- Global warming, will turn planet toxic if you do not intervene
+- Little House of Horrors-inspired invasion by hungry plantoids
+- Can hack nuclear weapons to prevent war, might backfire or reveal you
+- Scientists may join death god cult (similar to, and exclusive with, rogue scientist event), makes death god more likely to awaken, if real
+- Find ruins of an advanced civ on primitive world
+- Colombian Exchange, natives of one area colonized / killed by war and disease, can choose to intervene
+- Doomsday, planet is doomed, can choose to save them
+- Cracking their moon will (or primary or sister moons) will have a big impact on their culture, may become spiritualists, if advanced enough to understand what happened, may become militarist or xenophobe, may lead them to discovering your observation post
+
+- Primitive Politics
+	- Citizen Service
+	- Barbaric Despoilers
+	- Inward Perfection (china analog)
+	- Philisopher Kings
+	- Primitive Cyborg (with expanded pops and traits), gives techs and traits required
+	- Fanatical Befriender (with expanded pops and traits), easter egg, must be similar to blorg, how similar TBD
+	- Necroid Takeover (Necoid Origin)
+	
+- Genetically modify primitives
+- science ship crashes, makes contact
+- if trade passes through system, civillian ship crashes, makes contact
+
+Events for planetary modifiers
+- Bleak, famine, pops dies
+- Asteroid Impacts
+- Hazardous Weather
+- Hostile Fauna
+- Wild Storms
+- Lush
+- Titanic Life, city gets crushed, driven to extinction (xenophiles can bring them to one of their worlds, gain three free titan armies)
+
+Events after primitives notice you
+- Machine Age +
+	- ask for tech
+	- ask to trade
+	- non-spiritualists ask for robots, may shift to materialists
+	- ship crashes
+- Space Age
+	- asks for help with space exploration
+	
+Primitive Psionic (rare event), pops get latent psionic trait
+- Psionics can be treated as:
+	- living gods
+	- respected leaders or wise people
+	- feared, shunned, or hunted
+- Psionics might penetrate shroud
+	- civ might disappear from deal gone bad
+	- massive tech bonus, thrown into space age with shroud ships
+	- Nothing happens, crisis of faith
+	- unleash darkspawn easter egg
+		- darkspawn will turn planet into a infested world if not defeated, chance to turn into a devouring swarm on a hive world later
+		- can intervene to help the primitives
+- Chosen one is leader of major nation (req spiritualist or authoritarian, not egalitarian or materialist)
+	- might later be deposed by democratic revolt, shifts ethics towards egalitarian
+
+
+Violent Beetle's Primitive World mod:
+
+Post-Apocalyptic Primitives
+- Children of Atom (spiritualists, chance of militarist, animist)
+- Vaults attacked by raiders
+- Battle between the Legion and NCR
+
+Hive Mind Primitives
+
+Machine Primitives

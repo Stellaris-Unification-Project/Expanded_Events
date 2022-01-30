@@ -336,8 +336,8 @@ planet_event = { #strong magnetic field good
 		NOR = {
 			has_modifier = "magnetic_research_boost"
 			has_modifier = "magnetic_disruption"
+			has_planet_flag = magnetic_mystery_solved
 		}
-		NOT = { has_planet_flag = magnetic_mystery_solved }
 		num_pops > 0
 	}
 	

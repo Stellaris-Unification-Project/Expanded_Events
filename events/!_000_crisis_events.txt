@@ -814,8 +814,8 @@ country_event = {
 			NOR = {
 				has_authority = auth_machine_intelligence
 				has_global_flag = contingency_singularity
+				has_global_flag = contingency_citadel
 			}
-			NOT = { has_global_flag = contingency_citadel }
 		}
 		text = crisis.2023.desc
 	}

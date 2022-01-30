@@ -2721,9 +2721,9 @@ planet_event = {
 		NOR = {
 			exists = archaeological_site
 			has_planet_flag = suppress_archaeological_sites
+			has_planet_flag = has_been_terraformed
+			has_global_flag = site_strange_fossils_found
 		}
-		NOT = { has_planet_flag = has_been_terraformed }
-		NOT = { has_global_flag = site_strange_fossils_found }
 		is_homeworld = no
 		OR = {
 			is_wet = yes
@@ -2773,8 +2773,8 @@ planet_event = {
 		NOR = {
 			has_global_flag = ancient_battle_site_found
 			exists = archaeological_site
+			has_planet_flag = suppress_archaeological_sites
 		}
-		NOT = { has_planet_flag = suppress_archaeological_sites }
 		NOT = {
 			any_system = {
 				any_system_planet = {
@@ -2986,8 +2986,8 @@ planet_event = {
 		NOR = {
 			exists = archaeological_site
 			has_planet_flag = suppress_archaeological_sites
+			has_global_flag = site_target_from_orbit_found
 		}
-		NOT = { has_global_flag = site_target_from_orbit_found }
 		NOT = {
 			any_system = {
 				any_system_planet = {

@@ -1479,8 +1479,6 @@ ship_event = {
 			NOR = {
 				exists = archaeological_site
 				has_planet_flag = suppress_archaeological_sites
-			}
-			NOR = {
 				is_planet_class = pc_gas_giant
 				is_planet_class = pc_molten
 			}
@@ -5967,8 +5965,8 @@ ship_event = {
 			NOR = {
 				exists = archaeological_site
 				has_planet_flag = suppress_archaeological_sites
+				has_planet_flag = statue_world
 			}
-			NOT = { has_planet_flag = statue_world }
 			solar_system = { NOT = { is_star_class = sc_dn } }
 		}
 	}

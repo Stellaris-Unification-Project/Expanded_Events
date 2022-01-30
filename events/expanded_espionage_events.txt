@@ -70,8 +70,6 @@ espionage_operation_event = {
 					NOR = {
 						has_valid_civic = civic_closed_collective
 						has_valid_civic = civic_closed_network
-					}
-					NOR = {
 						is_at_war_with = root.owner
 						has_closed_borders = root.owner
 					}

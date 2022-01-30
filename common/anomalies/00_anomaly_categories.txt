@@ -280,8 +280,8 @@ collision_asteroid_category = {
 					NOR = {
 						has_trait = leader_trait_meticulous
 						has_trait = leader_trait_cataloger
+						has_trait = leader_trait_expertise_new_worlds
 					}
-					NOT = { has_trait = leader_trait_expertise_new_worlds }
 				}
 			}
 			anomaly_event = anomaly_failure.6
@@ -809,8 +809,8 @@ impact_uninhabitable_category = {
 					NOR = {
 						has_trait = leader_trait_meticulous
 						has_trait = leader_trait_cataloger
+						has_trait = leader_trait_expertise_new_worlds
 					}
-					NOT = { has_trait = leader_trait_expertise_new_worlds }
 				}
 			}
 			anomaly_event = anomaly_failure.16
@@ -917,8 +917,6 @@ signal_uninhabitable_category = {
 					NOR = {
 						has_trait = leader_trait_meticulous
 						has_trait = leader_trait_cataloger
-					}
-					NOR = {
 						has_trait = leader_trait_expertise_propulsion
 						has_trait = leader_trait_expertise_field_manipulation
 					}
@@ -1045,9 +1043,9 @@ life_toxic_category = {
 					NOR = {
 						has_trait = leader_trait_meticulous
 						has_trait = leader_trait_cataloger
+						has_trait = leader_trait_expertise_new_worlds
+						has_trait = leader_trait_expertise_biology
 					}
-					NOT = { has_trait = leader_trait_expertise_new_worlds }
-					NOT = { has_trait = leader_trait_expertise_biology }
 				}
 			}
 			anomaly_event = anomaly_failure.21
@@ -1085,9 +1083,9 @@ life_frozen_category = {
 					NOR = {
 						has_trait = leader_trait_meticulous
 						has_trait = leader_trait_cataloger
+						has_trait = leader_trait_expertise_new_worlds
+						has_trait = leader_trait_expertise_biology
 					}
-					NOT = { has_trait = leader_trait_expertise_new_worlds }
-					NOT = { has_trait = leader_trait_expertise_biology }
 				}
 			}
 			anomaly_event = anomaly_failure.21
@@ -1134,9 +1132,9 @@ life_barren_category = {
 					NOR = {
 						has_trait = leader_trait_meticulous
 						has_trait = leader_trait_cataloger
+						has_trait = leader_trait_expertise_new_worlds
+						has_trait = leader_trait_expertise_biology
 					}
-					NOT = { has_trait = leader_trait_expertise_new_worlds }
-					NOT = { has_trait = leader_trait_expertise_biology }
 				}
 			}
 			anomaly_event = anomaly_failure.21
@@ -1186,8 +1184,6 @@ station_uninhabitable_category = {
 					NOR = {
 						has_trait = leader_trait_meticulous
 						has_trait = leader_trait_cataloger
-					}
-					NOR = {
 						has_trait = leader_trait_expertise_materials
 						has_trait = leader_trait_expertise_voidcraft
 					}

@@ -6632,8 +6632,8 @@ country_event = {
 		NOR = {
 			has_global_flag = war_in_heaven_ongoing
 			has_country_flag = guardians_of_the_galaxy
+			has_authority = auth_machine_intelligence
 		}
-		NOT = { has_authority = auth_machine_intelligence }
 		any_country = {
 			NOT = { has_country_flag = FE_attempted_take_over }
 			is_country_type = default

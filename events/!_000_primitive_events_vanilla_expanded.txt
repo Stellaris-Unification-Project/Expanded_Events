@@ -144,10 +144,7 @@ country_event = {
 			AND = {
 				exists = from
 				from = {
-					OR = {
-						is_country_type = default
-						is_country_type = awakened_fallen_empire
-					}
+					is_country_type_with_subjects = yes
 				}
 			}
 			AND = {
@@ -238,14 +235,11 @@ country_event = {
 			primitives_death_cult = {
 				if = {
 					limit = {
-						OR = {
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
-						}
+						is_spiritualist = yes
 						NOT = { has_ethic = ethic_fanatic_egalitarian }
-						OR = {
-							NOT = { has_global_flag = expanded_pops_active }
-							NOT = { has_authority = auth_cooperative }
+						NAND = {
+							has_global_flag = expanded_pops_active
+							has_authority = auth_cooperative
 						}
 					}
 					if = {
@@ -316,14 +310,8 @@ country_event = {
 			primitives_imperial_cult = {
 				if = {
 					limit = {
-						OR = {
-							has_ethic = ethic_authoritarian
-							has_ethic = ethic_fanatic_authoritarian
-						}
-						OR = {
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
-						}
+						is_authoritarian = yes
+						is_spiritualist = yes
 					}
 					random_list = {
 						55 = {
@@ -359,10 +347,7 @@ country_event = {
 			primitives_slave_revolt = {
 				if = {
 					limit = {
-						OR = {
-							has_ethic = ethic_xenophile
-							has_ethic = ethic_fanatic_xenophile
-						}
+						is_xenophile = yes
 					}
 					change_government = {
 						authority = auth_imperial
@@ -375,10 +360,8 @@ country_event = {
 				if = {
 					limit = {
 						NOR = {
-							has_ethic = ethic_xenophile
-							has_ethic = ethic_fanatic_xenophile
-							has_ethic = ethic_xenophobe
-							has_ethic = ethic_fanatic_xenophobe
+							is_xenophile = yes
+							is_xenophobe = yes
 						}
 					}
 					change_government = {
@@ -392,8 +375,7 @@ country_event = {
 				if = {
 					limit = {
 						OR = {
-							has_ethic = ethic_xenophobe
-							has_ethic = ethic_fanatic_xenophobe
+							is_xenophobe = yes
 						}
 					}
 					change_government = {
@@ -427,10 +409,7 @@ country_event = {
 			primitives_agrarian_idyll = {
 				if = {
 					limit = {
-						OR = {
-							has_ethic = ethic_pacifist
-							has_ethic = ethic_fanatic_pacifist
-						}
+						is_pacifist = yes
 					}
 					if = {
 						limit = {
@@ -564,10 +543,7 @@ country_event = {
 			primitives_exalted_priesthood = {
 				if = {
 					limit = {
-						OR = {
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
-						}
+						is_spiritualist = yes
 						NOT = {	has_ethic = ethic_fanatic_egalitarian }
 					}
 					if = {
@@ -635,10 +611,7 @@ country_event = {
 			primitives_warrior_culture = {
 				if = {
 					limit = {
-						OR = {
-							has_ethic = ethic_militarist
-							has_ethic = ethic_fanatic_militarist
-						}
+						is_militarist = yes
 					}
 					if = {
 						limit = {
@@ -664,10 +637,7 @@ country_event = {
 			primitives_feudal_elite = {
 				if = {
 					limit = {
-						NOR = {
-							has_ethic = ethic_egalitarian
-							has_ethic = ethic_fanatic_egalitarian
-						}
+						is_egalitarian = no
 					}
 					change_government = {
 						authority = auth_imperial
@@ -1012,7 +982,7 @@ country_event = {
 				else_if = {
 					limit = {
 						starbase = {
-							NOT = { owner = { is_same_value = root } }
+							NOT = { is_owned_by = root }
 						}
 					}	
 					starbase = {
@@ -1469,10 +1439,7 @@ planet_event = {
 		modifier = {
 			factor = 0.75
 			owner = {
-				OR = {
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-				}
+				is_militarist = yes
 			}
 		}
 		modifier = {
@@ -1534,10 +1501,7 @@ planet_event = {
 								ROOT = {
 									exists = owner
 									owner = {
-										OR = {
-											has_ethic = ethic_pacifist
-											has_ethic = ethic_fanatic_pacifist
-										}
+										is_pacifist = yes
 									}
 								}
 							}
@@ -1546,10 +1510,7 @@ planet_event = {
 								ROOT = {
 									exists = owner
 									owner = {
-										OR = {
-											has_ethic = ethic_xenophile
-											has_ethic = ethic_fanatic_xenophile
-										}
+										is_xenophile = yes
 									}
 								}
 							}
@@ -1566,8 +1527,7 @@ planet_event = {
 								factor = 0 # won't turn planet uninhabitable if it's not a planet
 								root = {
 									OR = {
-										is_planet_class = pc_ringworld_habitable
-										is_planet_class = pc_habitat
+										is_artificial = yes
 									}
 								}
 							}
@@ -1587,8 +1547,7 @@ planet_event = {
 								factor = 0 # won't turn planet uninhabitable if it's not a planet
 								root = {
 									OR = {
-										is_planet_class = pc_ringworld_habitable
-										is_planet_class = pc_habitat
+										is_artificial = yes
 										NOT = { host_has_dlc = Apocalypse }
 										NOT = { has_global_flag = has_primitive_worlds }
 									}
@@ -1601,8 +1560,7 @@ planet_event = {
 								factor = 0 # won't turn planet uninhabitable if it's not a planet
 								root = {
 									OR = {
-										is_planet_class = pc_ringworld_habitable
-										is_planet_class = pc_habitat
+										is_artificial = yes
 										NOT = { host_has_dlc = Apocalypse }
 										has_global_flag = has_primitive_worlds
 									}
@@ -1627,8 +1585,7 @@ planet_event = {
 								factor = 0 # won't turn planet uninhabitable if it's not a planet
 								root = {
 									OR = {
-										is_planet_class = pc_ringworld_habitable
-										is_planet_class = pc_habitat
+										is_artificial = yes
 									}
 								}
 							}
@@ -1640,8 +1597,7 @@ planet_event = {
 								factor = 0 # won't turn planet uninhabitable if it's not a planet
 								root = {
 									OR = {
-										is_planet_class = pc_ringworld_habitable
-										is_planet_class = pc_habitat
+										is_artificial = yes
 										NOT = { host_has_dlc = Apocalypse }
 										NOT = { has_global_flag = has_primitive_worlds }
 									}
@@ -1654,8 +1610,7 @@ planet_event = {
 								factor = 0 # won't turn planet uninhabitable if it's not a planet
 								root = {
 									OR = {
-										is_planet_class = pc_ringworld_habitable
-										is_planet_class = pc_habitat
+										is_artificial = yes
 										NOT = { host_has_dlc = Apocalypse }
 										has_global_flag = has_primitive_worlds
 									}
@@ -1681,8 +1636,7 @@ planet_event = {
 							factor = 0 # won't turn planet uninhabitable if it's not a planet
 							root = {
 								OR = {
-									is_planet_class = pc_ringworld_habitable
-									is_planet_class = pc_habitat
+									is_artificial = yes
 								}
 							}
 						}
@@ -1694,8 +1648,7 @@ planet_event = {
 							factor = 0 # won't turn planet uninhabitable if it's not a planet
 							root = {
 								OR = {
-									is_planet_class = pc_ringworld_habitable
-									is_planet_class = pc_habitat
+									is_artificial = yes
 									NOT = { host_has_dlc = Apocalypse }
 									NOT = { has_global_flag = has_primitive_worlds }
 								}
@@ -1708,8 +1661,7 @@ planet_event = {
 							factor = 0 # won't turn planet uninhabitable if it's not a planet
 							root = {
 								OR = {
-									is_planet_class = pc_ringworld_habitable
-									is_planet_class = pc_habitat
+									is_artificial = yes
 									NOT = { host_has_dlc = Apocalypse }
 									has_global_flag = has_primitive_worlds
 								}

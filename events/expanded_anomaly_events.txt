@@ -1410,10 +1410,7 @@ country_event = {
 
 	option = {
 		trigger = {
-			NOR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = no
 		}
 		name = "distar.172.a"
 		while = {
@@ -1485,13 +1482,9 @@ country_event = {
 	option = {
 		trigger = {
 			hidden_trigger = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophobe = yes
 				any_owned_pop = {
-					NOR = {
-						has_ethic = ethic_xenophobe
-						has_ethic = ethic_fanatic_xenophobe
-					}
+					is_xenophobe = no
 				}
 			}
 		}
@@ -1500,10 +1493,7 @@ country_event = {
 			count = 3
 			random_owned_pop = {
 				LIMIT = {
-					NOR = {
-						has_ethic = ethic_xenophobe
-						has_ethic = ethic_fanatic_xenophobe
-					}
+					is_xenophobe = no
 					species = {
 						NOR = {
 							has_trait = trait_cybernetic
@@ -1825,10 +1815,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -1838,8 +1826,7 @@ country_event = {
 		
 		trigger = {
 			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_materialist = yes
 			}
 		}
 	}
@@ -1848,15 +1835,10 @@ country_event = {
 		name = mem_primitives.401a.sp
 		
 		trigger = {
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -1865,14 +1847,8 @@ country_event = {
 		name = mem_primitives.401a.sphile
 		
 		trigger = {
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_spiritualist = yes
+			is_xenophile = yes
 		}
 		
 		add_monthly_resource_mult = {
@@ -1887,13 +1863,9 @@ country_event = {
 		name = mem_primitives.401a.sphobe
 		
 		trigger = {
+			is_spiritualist = yes
 			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophobe = yes
 			}
 		}
 		
@@ -1933,8 +1905,10 @@ country_event = {
 	}
 	
 	trigger = {
-		NOT = { has_country_flag = dead_god_psionics }
-		NOT = { has_ascension_perk = ap_mind_over_matter }
+		NOR = {
+			has_country_flag = dead_god_psionics
+			has_ascension_perk = ap_mind_over_matter
+		}
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		has_country_flag = dead_god_original_primitives
 		has_country_flag = dead_god_is_real
@@ -2057,8 +2031,7 @@ country_event = {
 					is_country_type = default
 					is_country_type = ascended_empire
 					is_country_type = lost_empire
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+					is_fallen_empire = yes
 				}
 			}
 			every_owned_leader = {
@@ -2144,7 +2117,7 @@ country_event = {
 				}
 			}
 		}
-		every_country = {
+		every_playable_country = {
 			limit = { 
 				is_ai = no
 				has_communications = root
@@ -2202,8 +2175,10 @@ country_event = {
 	}
 	
 	trigger = {
-		NOT = { has_country_flag = dead_god_moon_landing }
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		NOR = {
+			has_country_flag = dead_god_moon_landing
+			has_ethic = ethic_gestalt_consciousness
+		}
 		has_country_flag = dead_god_original_primitives
 		has_country_flag = early_space_age
 		capital_scope = {
@@ -2657,7 +2632,7 @@ planet_event = {
 				every_neighbor_system = {
 					limit = {
 						exists = space_owner
-						space_owner = { is_same_value = event_target:dead_god_invaders }
+						is_owned_by = event_target:dead_god_invaders
 						NOT = {
 							any_system_planet  = {
 								is_colony = yes
@@ -2823,7 +2798,7 @@ country_event = {
 			save_event_target_as = the_planet
 			set_planet_flag = dead_god_has_awaken
 		}
-		every_country = {
+		every_playable_country = {
 			limit = { is_ai = no }
 			country_event = { id = anomalymod.72 }
 		}
@@ -3089,8 +3064,10 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				NOT = { has_technology = tech_ascension_theory }
-				NOT = { has_tech_option = tech_ascension_theory }
+				NOR = {
+					has_technology = tech_ascension_theory
+					has_tech_option = tech_ascension_theory
+				}
 			}
 			add_research_option = tech_ascension_theory
 			add_tech_progress = {
@@ -4265,7 +4242,7 @@ country_event = {
 					limit = {
 						is_star = no
 						is_asteroid = no
-						NOT = { is_gas_giant = yes }
+						is_gas_giant = no
 					}
 					# destroy habitats and ringworlds
 					if = {
@@ -4583,8 +4560,7 @@ country_event = {
 		name = planet_destruction.610.mater
 		trigger = {
 			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_materialist = yes
 			}
 			#is_materialist = yes
 		}
@@ -4594,10 +4570,7 @@ country_event = {
 		name = anomalymod.110.phile
 		response_text = anomalymod.110.a.response
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 			#is_xenophile = yes
 		}
 	}
@@ -4867,8 +4840,7 @@ planet_event = {
 						}
 						any_neighbor_system = { has_star_flag = space_locusts_current_location }
 					}
-					random_system_planet = {
-						limit = { is_star = yes }
+					star = {
 						planet_event = { id = anomalymod.120 days = 10800 random = 10800 }
 					}
 				}
@@ -4932,8 +4904,7 @@ planet_event = {
 						}
 						any_neighbor_system = { has_star_flag = space_locusts_current_location }
 					}
-					random_system_planet = {
-						limit = { is_star = yes }
+					star = {
 						planet_event = { id = anomalymod.120 days = 10800 random = 10800 }
 					}
 				}
@@ -5035,8 +5006,7 @@ planet_event = {
 					}
 					any_neighbor_system = { has_star_flag = space_locusts_current_location }
 				}
-				random_system_planet = {
-					limit = { is_star = yes }
+				star = {
 					planet_event = { id = anomalymod.120 days = 10800 random = 10800 }
 				}
 			}
@@ -5161,8 +5131,10 @@ planet_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { is_planet_class = pc_shattered }
-		NOT = { is_planet_class = pc_egg_cracked }
+		NOR = {
+			is_planet_class = pc_shattered
+			is_planet_class = pc_egg_cracked
+		}
 	}
 	
 	immediate = {
@@ -5195,8 +5167,10 @@ planet_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_global_flag = expanded_egg_hatched }
-		NOT = { is_planet_class = pc_shattered }
+		NOR = {
+			has_global_flag = expanded_egg_hatched
+			is_planet_class = pc_shattered
+		}
 		NOT = { is_planet_class = pc_egg_cracked }
 		NAND = {
 			exists = space_owner
@@ -5227,7 +5201,7 @@ planet_event = {
 			research_station = { dismantle = yes }
 		}
 		planet_event = { id = anomalymod.132 days = 70 }
-		every_country = {
+		every_playable_country = {
 			limit = {
 				has_special_project = PROJECT_CRACK_EGG_TWO
 			}
@@ -5371,7 +5345,7 @@ ship_event = {
 		exists = event_target:hatchling_country_two
 		exists = event_target:hatchling_two
 		is_same_value = event_target:hatchling_two
-		owner = { is_same_value = event_target:hatchling_country_two }
+		is_owned_by = event_target:hatchling_country_two
 	}
 
 	immediate = {
@@ -5609,8 +5583,10 @@ planet_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { is_planet_class = pc_shattered }
-		NOT = { is_planet_class = pc_egg_cracked }
+		NOR = {
+			is_planet_class = pc_shattered
+			is_planet_class = pc_egg_cracked
+		}
 		NAND = {
 			exists = space_owner
 			space_owner = { has_country_flag = stopped_egg_hatching }
@@ -6178,8 +6154,10 @@ ship_event = {
 		trigger = {
 			NAND = {
 				owner = {
-					NOT = { has_tech_option = tech_penal_colonies }
-					NOT = { has_technology = tech_penal_colonies }
+					NOR = {
+						has_tech_option = tech_penal_colonies
+						has_technology = tech_penal_colonies
+					}
 					is_egalitarian = no
 				}
 				leader = {
@@ -6202,8 +6180,10 @@ ship_event = {
 		name = anomaly.280.a
 		trigger = {
 			owner = {
-				NOT = { has_tech_option = tech_penal_colonies }
-				NOT = { has_technology = tech_penal_colonies }
+				NOR = {
+					has_tech_option = tech_penal_colonies
+					has_technology = tech_penal_colonies
+				}
 			}
 			leader = {
 				OR = {
@@ -6749,7 +6729,7 @@ ship_event = {
 				has_modifier = "transdimensional_being"
 				exists = space_owner
 				space_owner = {
-					is_same_value = root.owner
+					is_same_empire = root.owner
 				}
 			}
 			save_event_target_as = transdimensional_being_planet
@@ -6784,7 +6764,7 @@ ship_event = {
 				has_modifier = "transdimensional_being"
 				exists = space_owner
 				space_owner = {
-					is_same_value = root.owner
+					is_same_empire = root.owner
 				}
 			}
 			save_event_target_as = transdimensional_being_planet
@@ -8032,7 +8012,7 @@ planet_event = {
 	option = {
 		name = colony_mod.2.c
 		trigger = {
-			owner = { OR = { has_ethic = ethic_xenophile has_ethic = ethic_fanatic_xenophile } #nice, for xenophiles
+			owner = { OR = { is_xenophile = yes } #nice, for xenophiles
 			}
 		}
 		# study them, bad outcome less likely but takes longer.
@@ -8052,8 +8032,7 @@ planet_event = {
 		trigger = {
 			owner = { 
 				OR = { 
-					has_ethic = ethic_xenophobe 
-					has_ethic = ethic_fanatic_xenophobe 
+					is_xenophobe = yes 
 					has_authority = auth_hive_mind
 				} #mean, for xenophobe
 			}
@@ -9146,7 +9125,7 @@ ship_event = {
 							NOT = { exists = space_owner }
 							AND = {
 								exists = space_owner
-								space_owner = { is_same_value = from.owner }
+								is_owned_by = from.owner
 							}
 						}
 						OR = {
@@ -9170,7 +9149,7 @@ ship_event = {
 							NOT = { exists = space_owner }
 							AND = {
 								exists = space_owner
-								space_owner = { is_same_value = from.owner }
+								is_owned_by = from.owner
 							}
 						}
 						OR = {

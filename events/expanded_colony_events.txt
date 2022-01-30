@@ -1596,8 +1596,10 @@ planet_event = {
 	
 	trigger = {
 		num_pops > 3
-		NOT = { has_planet_flag = volcanic_fertile }
-		NOT = { has_planet_flag = volcanic_energy }
+		NOR = {
+			has_planet_flag = volcanic_fertile
+			has_planet_flag = volcanic_energy
+		}
 		OR = {
 			has_deposit = d_active_volcano
 			has_deposit = d_igneous_traps
@@ -2204,8 +2206,10 @@ planet_event = {
 	
 	trigger = {
 		num_pops > 3
-		NOT = { has_planet_flag = volcanic_fertile }
-		NOT = { has_planet_flag = volcanic_energy }
+		NOR = {
+			has_planet_flag = volcanic_fertile
+			has_planet_flag = volcanic_energy
+		}
 		OR = {
 			has_deposit = d_active_volcano
 			has_deposit = d_igneous_traps
@@ -2238,8 +2242,10 @@ planet_event = {
 		OR = {
 			AND = {
 				has_modifier = "strong_magnetic_field"
-				NOT = { has_modifier = "magnetic_research_boost" }
-				NOT = { has_modifier = "magnetic_disruption" }
+				NOR = {
+					has_modifier = "magnetic_research_boost"
+					has_modifier = "magnetic_disruption"
+				}
 			}
 			AND = {	
 				has_modifier = asteroid_impacts
@@ -2340,13 +2346,11 @@ planet_event = {
 		owner = {
 			NOR = {
 				has_country_flag = found_presapients_312
-				has_valid_civic = civic_fanatic_purifiers
-				has_valid_civic = civic_hive_devouring_swarm
-				has_valid_civic = civic_machine_terminator
+				is_homicidal = yes
 			}
 		}
 		habitable_planet = yes
-		NOT = { is_gaia = yes }
+		is_gaia = no
 	}
 	
 	immediate = {
@@ -2478,8 +2482,10 @@ planet_event = {
 			limit = {
 				has_deposit = d_giant_pearls
 				owner = {
-					NOT = { has_ethic = ethic_gestalt_consciousness }
-					NOT = { has_ethic = ethic_fanatic_materialist }
+					NOR = {
+						has_ethic = ethic_gestalt_consciousness
+						has_ethic = ethic_fanatic_materialist
+					}
 					NOT = { has_technology = tech_psionic_theory }
 				}
 			}
@@ -3715,8 +3721,10 @@ country_event = {
 					planet_event = { id = colonyexpanded.409 }
 					modifier = {
 						factor = 2
-						NOT = { has_modifier = corrupt_cops }
-						NOT = { has_modifier = corrupt_cops_lingering }
+						NOR = {
+							has_modifier = corrupt_cops
+							has_modifier = corrupt_cops_lingering
+						}
 						OR = {
 							has_modifier = criminal_underworld
 							has_modifier = center_of_drug_trade
@@ -3725,8 +3733,10 @@ country_event = {
 					}
 					modifier = {
 						factor = 1.5
-						NOT = { has_modifier = corrupt_cops }
-						NOT = { has_modifier = corrupt_cops_lingering }
+						NOR = {
+							has_modifier = corrupt_cops
+							has_modifier = corrupt_cops_lingering
+						}
 						OR = {
 							planet_crime > 14
 							planet_stability < 36
@@ -3734,8 +3744,10 @@ country_event = {
 					}
 					modifier = {
 						factor = 1.5
-						NOT = { has_modifier = corrupt_cops }
-						NOT = { has_modifier = corrupt_cops_lingering }
+						NOR = {
+							has_modifier = corrupt_cops
+							has_modifier = corrupt_cops_lingering
+						}
 						OR = {
 							planet_crime > 19
 							planet_stability < 31
@@ -4152,8 +4164,10 @@ planet_event = {
 	
 	trigger = {
 		exists = owner
-		NOT = { has_modifier = corrupt_cops }
-		NOT = { has_modifier = corrupt_cops_lingering }
+		NOR = {
+			has_modifier = corrupt_cops
+			has_modifier = corrupt_cops_lingering
+		}
 		OR = {
 			planet_crime > 9
 			planet_stability < 46
@@ -5355,8 +5369,10 @@ planet_event = {
 	trigger = {
 		exists = owner
 		owner = {
-			NOT = { has_country_flag = dportal_empire_plasma_gases }
-			NOT = { has_technology = tech_plasma_3 }
+			NOR = {
+				has_country_flag = dportal_empire_plasma_gases
+				has_technology = tech_plasma_3
+			}
 			is_at_war = no
 			has_crisis = no
 		}
@@ -6708,7 +6724,7 @@ event = {
 					}
 					any_owned_planet = {
 						exists = controller
-						controller = { is_same_value = root.owner }
+						controller = { is_same_empire = root.owner }
 						has_orbital_bombardment = no
 						NOT = { has_planet_flag = recent_unrest_event }
 						NOT = { has_modifier = food_riot }
@@ -6731,7 +6747,7 @@ event = {
 					}
 					any_owned_planet = {
 						exists = controller
-						controller = { is_same_value = root.owner }
+						controller = { is_same_empire = root.owner }
 						has_orbital_bombardment = no
 						NOT = { has_planet_flag = recent_unrest_event }
 						NOT = { has_modifier = food_riot }
@@ -6755,7 +6771,7 @@ event = {
 					any_owned_planet = {
 						num_districts = { type = district_farming value >= 4 }
 						exists = controller
-						controller = { is_same_value = root.owner }
+						controller = { is_same_empire = root.owner }
 						has_orbital_bombardment = no
 						NOT = { has_planet_flag = recent_unrest_event }
 						NOT = { has_modifier = bad_harvest }
@@ -6769,7 +6785,7 @@ event = {
 					any_owned_planet = {
 						num_districts = { type = district_farming value >= 4 }
 						exists = controller
-						controller = { is_same_value = root.owner }
+						controller = { is_same_empire = root.owner }
 						has_orbital_bombardment = no
 						NOT = { has_planet_flag = recent_unrest_event }
 						NOT = { has_modifier = bad_harvest }
@@ -6787,7 +6803,7 @@ event = {
 						random_owned_planet = {
 							limit = {
 								exists = controller
-								controller = { is_same_value = root.owner }
+								controller = { is_same_empire = root.owner }
 								has_orbital_bombardment = no
 								NOT = { has_planet_flag = recent_unrest_event }
 								NOT = { has_modifier = food_riot }
@@ -6819,7 +6835,7 @@ event = {
 							limit = {
 								num_districts = { type = district_farming value >= 4 }
 								exists = controller
-								controller = { is_same_value = root.owner }
+								controller = { is_same_empire = root.owner }
 								has_orbital_bombardment = no
 								NOT = { has_planet_flag = recent_unrest_event }
 								NOT = { has_modifier = bad_harvest }
@@ -6901,7 +6917,7 @@ planet_event = {
 			}
 		}
 		exists = controller
-		controller = { is_same_value = root.owner }
+		controller = { is_same_empire = root.owner }
 		has_orbital_bombardment = no
 		NOT = { has_planet_flag = recent_unrest_event }
 		NOT = { has_modifier = food_riot }
@@ -6960,7 +6976,7 @@ planet_event = {
 		}
 		num_districts = { type = district_farming value >= 4 }
 		exists = controller
-		controller = { is_same_value = root.owner }
+		controller = { is_same_empire = root.owner }
 		has_orbital_bombardment = no
 		NOT = { has_planet_flag = recent_unrest_event }
 		NOT = { has_modifier = bad_harvest }

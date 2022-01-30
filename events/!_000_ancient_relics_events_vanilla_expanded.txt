@@ -30,12 +30,14 @@ ship_event = {
 		host_has_dlc = "Ancient Relics Story Pack"
 		owner = { is_ai = no }
 		solar_system = { has_star_flag = precursor_zroni_1 }
-		solar_system = { NOT = { is_same_value = root.owner.capital_scope.solar_system } }
+		solar_system = { NOT = { is_same_empire = root.owner.capital_scope.solar_system } }
 		NOT = { has_global_flag = zroni_started }
 		FROM = {
 			has_anomaly = no
-			NOT = { exists = archaeological_site }
-			NOT = { has_planet_flag = suppress_archaeological_sites }
+			NOR = {
+				exists = archaeological_site
+				has_planet_flag = suppress_archaeological_sites
+			}
 			OR = {
 				habitable_planet = yes
 				is_nuked = yes
@@ -104,13 +106,13 @@ fleet_event = {
 				NOR = {
 					is_same_value = root.solar_system
 					has_star_flag = first_zoroni_site@root.owner
-					is_same_value = root.owner.capital_scope.solar_system
+					is_same_empire = root.owner.capital_scope.solar_system
 					has_star_flag = hostile_system
 				}
 				is_fe_cluster = no
 				OR = {
 					has_owner = no
-					owner = { is_same_value = root.owner }
+					is_owned_by = root.owner
 				}
 				any_system_planet = {
 					habitable_planet = yes
@@ -162,13 +164,13 @@ fleet_event = {
 					NOR = {
 						is_same_value = root.solar_system
 						has_star_flag = first_zoroni_site@root.owner
-						is_same_value = root.owner.capital_scope.solar_system
+						is_same_empire = root.owner.capital_scope.solar_system
 						has_star_flag = hostile_system
 					}
 					is_fe_cluster = no
 					OR = {
 						has_owner = no
-						owner = { is_same_value = root.owner }
+						is_owned_by = root.owner
 					}
 					any_system_planet = {
 						OR = {
@@ -283,13 +285,13 @@ fleet_event = {
 				NOR = {
 					is_same_value = root.solar_system
 					has_star_flag = first_zoroni_site@root.owner
-					is_same_value = root.owner.capital_scope.solar_system
+					is_same_empire = root.owner.capital_scope.solar_system
 					has_star_flag = hostile_system
 				}
 				is_fe_cluster = no
 				OR = {
 					has_owner = no
-					owner = { is_same_value = root.owner }
+					is_owned_by = root.owner
 				}
 				any_system_planet = {
 					habitable_planet = yes
@@ -341,13 +343,13 @@ fleet_event = {
 					NOR = {
 						is_same_value = root.solar_system
 						has_star_flag = first_zoroni_site@root.owner
-						is_same_value = root.owner.capital_scope.solar_system
+						is_same_empire = root.owner.capital_scope.solar_system
 						has_star_flag = hostile_system
 					}
 					is_fe_cluster = no
 					OR = {
 						has_owner = no
-						owner = { is_same_value = root.owner }
+						is_owned_by = root.owner
 					}
 					any_system_planet = {
 						OR = {
@@ -429,13 +431,13 @@ fleet_event = {
 				NOR = {
 					is_same_value = root.solar_system
 					has_star_flag = first_zoroni_site@root.owner
-					is_same_value = root.owner.capital_scope.solar_system
+					is_same_empire = root.owner.capital_scope.solar_system
 					has_star_flag = hostile_system
 				}
 				is_fe_cluster = no
 				OR = {
 					has_owner = no
-					owner = { is_same_value = root.owner }
+					is_owned_by = root.owner
 				}
 				any_system_planet = {
 					habitable_planet = yes
@@ -487,13 +489,13 @@ fleet_event = {
 					NOR = {
 						is_same_value = root.solar_system
 						has_star_flag = first_zoroni_site@root.owner
-						is_same_value = root.owner.capital_scope.solar_system
+						is_same_empire = root.owner.capital_scope.solar_system
 						has_star_flag = hostile_system
 					}
 					is_fe_cluster = no
 					OR = {
 						has_owner = no
-						owner = { is_same_value = root.owner }
+						is_owned_by = root.owner
 					}
 					any_system_planet = {
 						OR = {
@@ -575,13 +577,13 @@ fleet_event = {
 				NOR = {
 					is_same_value = root.solar_system
 					has_star_flag = first_zoroni_site@root.owner
-					is_same_value = root.owner.capital_scope.solar_system
+					is_same_empire = root.owner.capital_scope.solar_system
 					has_star_flag = hostile_system
 				}
 				is_fe_cluster = no
 				OR = {
 					has_owner = no
-					owner = { is_same_value = root.owner }
+					is_owned_by = root.owner
 				}
 				any_system_planet = {
 					habitable_planet = yes
@@ -633,13 +635,13 @@ fleet_event = {
 					NOR = {
 						is_same_value = root.solar_system
 						has_star_flag = first_zoroni_site@root.owner
-						is_same_value = root.owner.capital_scope.solar_system
+						is_same_empire = root.owner.capital_scope.solar_system
 						has_star_flag = hostile_system
 					}
 					is_fe_cluster = no
 					OR = {
 						has_owner = no
-						owner = { is_same_value = root.owner }
+						is_owned_by = root.owner
 					}
 					any_system_planet = {
 						OR = {
@@ -1132,8 +1134,10 @@ ship_event = {
 				limit = { colonizable_planet = yes }
 				if = {
 					limit = {
-						NOT = { has_modifier = mineral_rich }
-						NOT = { has_modifier = ultra_rich }
+						NOR = {
+							has_modifier = mineral_rich
+							has_modifier = ultra_rich
+						}
 					}
 					hidden_effect = { remove_modifier = mineral_poor }
 					add_modifier = { modifier = mineral_rich days = -1 }
@@ -1464,7 +1468,7 @@ ship_event = {
 		solar_system = {
 			has_star_flag = precursor_baol_1
 			NOR = {
-				is_same_value = root.owner.capital_scope.solar_system
+				is_same_empire = root.owner.capital_scope.solar_system
 				has_star_flag = sol_system
 			}
 		}
@@ -1472,8 +1476,10 @@ ship_event = {
 		FROM = {
 			has_anomaly = no
 			is_star = no
-			NOT = { exists = archaeological_site }
-			NOT = { has_planet_flag = suppress_archaeological_sites }
+			NOR = {
+				exists = archaeological_site
+				has_planet_flag = suppress_archaeological_sites
+			}
 			NOR = {
 				is_planet_class = pc_gas_giant
 				is_planet_class = pc_molten
@@ -1547,7 +1553,7 @@ fleet_event = {
 				}
 				OR = {
 					has_owner = no
-					owner = { is_same_value = root.owner }
+					is_owned_by = root.owner
 				}
 				any_system_planet = {
 					habitable_planet = yes
@@ -1828,8 +1834,7 @@ planet_event = { #Baol Life-Seeding complete
 		trigger = {
 			owner = {
 				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
+					is_xenophile = yes
 					has_valid_civic = civic_machine_servitor
 				}
 			}
@@ -1977,7 +1982,7 @@ country_event = {
 					factor = 9 # 32% chance for single player
 					is_ai = no
 					NOT = {
-						count_country = {
+						count_playable_country = {
 							limit = { is_ai = no }
 							count > 1
 						}
@@ -1986,7 +1991,7 @@ country_event = {
 				modifier = {
 					factor = 4 # 17% chance for multiplayer
 					is_ai = no
-					count_country = {
+					count_playable_country = {
 						limit = { is_ai = no }
 						count > 1
 					}
@@ -2211,8 +2216,10 @@ planet_event = {
 	trigger = {
 		has_ancrel = yes
 		is_homeworld = no
-		NOT = { exists = archaeological_site }
-		NOT = { has_planet_flag = suppress_archaeological_sites }
+		NOR = {
+			exists = archaeological_site
+			has_planet_flag = suppress_archaeological_sites
+		}
 		From = {
 			OR = {
 				is_deposit_type = d_dense_jungle
@@ -2753,10 +2760,7 @@ fleet_event = {
  	small_artifact_reward = yes
  	trigger = {
  		root.owner = {
- 			NOR = {
- 				has_ethic = ethic_xenophobe
- 				has_ethic = ethic_fanatic_xenophobe
- 			}
+ 			is_xenophobe = no
  		}
  	}
  	root.owner = {
@@ -2784,10 +2788,7 @@ fleet_event = {
  	small_artifact_reward = yes
  	trigger = {
  		root.owner = {
- 			OR = {
- 				has_ethic = ethic_xenophobe
- 				has_ethic = ethic_fanatic_xenophobe
- 			}
+ 			is_xenophobe = yes
  		}
  	}
  	root.owner = {
@@ -2994,7 +2995,7 @@ event = {
 		mid_game_years_passed >= 20
 		OR = {
 			NOT = { end_game_years_passed >= 200 }
-			count_country = {
+			count_playable_country = {
 				limit = { is_ai = no }
 				count > 1
 			}
@@ -3003,10 +3004,8 @@ event = {
 		NOT = { has_global_flag = zarqlan_spawned }
 		has_crisis = no
 		any_country = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			has_country_flag = fallen_empire_2
 			any_playable_country = {
 				is_ai = no
@@ -3022,10 +3021,8 @@ event = {
 				set_global_flag = zarqlan_spawned
 				random_country = {
 					limit = {
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 						has_country_flag = fallen_empire_2
 					}
 					save_event_target_as = spiritualist_fallen_empire
@@ -3081,10 +3078,8 @@ country_event = {
 
 	trigger = {
 		any_country = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			has_country_flag = fallen_empire_2
 			has_communications = root
 		}
@@ -3093,10 +3088,8 @@ country_event = {
 	immediate = {
 		random_country = {
 			limit = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				has_country_flag = fallen_empire_2
 			}
 			save_event_target_as = spiritualist_fallen_empire
@@ -3915,7 +3908,7 @@ fleet_event = {
 								NOT = { exists = space_owner }
 								AND = {
 									exists = space_owner
-									space_owner = { is_same_value = root.owner }
+									is_owned_by = root.owner
 								}
 							}
 							any_system_planet = {
@@ -4026,10 +4019,8 @@ fleet_event = {
 							factor = 0
 							NOT = {
 								any_country = {
-									OR = {
-										is_country_type = fallen_empire
-										is_country_type = awakened_fallen_empire
-									}
+									
+										is_fallen_empire = yes
 									has_ethic = ethic_fanatic_materialist
 								}
 							}
@@ -5973,8 +5964,10 @@ ship_event = {
 	trigger = {
 		has_ancrel = yes
 		FROM = {
-			NOT = { exists = archaeological_site }
-			NOT = { has_planet_flag = suppress_archaeological_sites }
+			NOR = {
+				exists = archaeological_site
+				has_planet_flag = suppress_archaeological_sites
+			}
 			NOT = { has_planet_flag = statue_world }
 			solar_system = { NOT = { is_star_class = sc_dn } }
 		}
@@ -6050,19 +6043,13 @@ country_event = {
 	# Phobe
 	desc = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		text = ancrel.9001.desc.phobe
 	}
 	desc = {
 		trigger = {
-			NOR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = no
 		}
 		text = ancrel.9001.desc
 	}
@@ -6317,19 +6304,13 @@ country_event = {
 	# Phobe
 	desc = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		text = ancrel.10050.desc.1.phobe
 	}
 	desc = {
 		trigger = {
-			NOR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = no
 		}
 		text = ancrel.10050.desc.1
 	}
@@ -6425,19 +6406,13 @@ country_event = {
 	# Phobe
 	desc = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		text = ancrel.10200.desc.phobe
 	}
 	desc = {
 		trigger = {
-			NOR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = no
 		}
 		text = ancrel.10200.desc
 	}
@@ -6469,8 +6444,10 @@ country_event = {
 		owner = {
 			if = {
 				limit = {
-					NOT = { has_technology = tech_housing_1 }
-					NOT = { has_valid_civic = civic_agrarian_idyll }
+					NOR = {
+						has_technology = tech_housing_1
+						has_valid_civic = civic_agrarian_idyll
+					}
 				}
 				give_technology = { tech = tech_housing_1 }
 				add_research_option = tech_housing_2
@@ -6485,8 +6462,10 @@ country_event = {
 			}
 			else_if = {
 				limit = {
-					NOT = { has_technology = tech_housing_2 }
-					NOT = { has_valid_civic = civic_agrarian_idyll }
+					NOR = {
+						has_technology = tech_housing_2
+						has_valid_civic = civic_agrarian_idyll
+					}
 				}
 				add_research_option = tech_housing_2
 				add_tech_progress = {
@@ -6922,8 +6901,7 @@ country_event = {
 		trigger = {
 			OR = {
                 has_policy_flag = ai_outlawed
-                has_ethic = ethic_spiritualist
-                has_ethic = ethic_fanatic_spiritualist
+                is_spiritualist = yes
             }
 		}
 		text = ancrel.10250.desc.antimachine
@@ -6932,8 +6910,7 @@ country_event = {
 		trigger = {
 			NOR = {
                 has_policy_flag = ai_outlawed
-                has_ethic = ethic_spiritualist
-                has_ethic = ethic_fanatic_spiritualist
+                is_spiritualist = yes
             }
 		}
 		text = ancrel.10250.desc

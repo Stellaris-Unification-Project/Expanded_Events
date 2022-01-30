@@ -59,8 +59,10 @@ artifact_lgate_clue = {
 
 	potential = {
 		has_country_flag = encountered_first_lgate
-		NOT = { has_country_flag = completed_lcluster_chain }
-		NOT = { has_global_flag = l_cluster_opened }
+		NOR = {
+			has_country_flag = completed_lcluster_chain
+			has_global_flag = l_cluster_opened
+		}
 		has_distar = yes
 	}
 
@@ -595,8 +597,10 @@ artifact_mega_ruins_research = {
 
 	potential = {
 		has_country_flag = mega_ruins_completed
-		NOT = { has_country_flag = mega_ruin_research_started }
-		NOT = { has_technology = tech_mega_engineering }
+		NOR = {
+			has_country_flag = mega_ruin_research_started
+			has_technology = tech_mega_engineering
+		}
 	}
 	
 	allow = {

@@ -138,15 +138,13 @@ give_fe_tech_gift = {
 				}
 				OR = {
 					has_technology = tech_psionic_theory
-					has_ethic = "ethic_materialist"
-					has_ethic = "ethic_fanatic_materialist"
+					is_materialist = yes
 					is_gestalt = yes
 					event_target:FallenEmpireTaskOrigin = { NOT = { has_ethic = ethic_fanatic_spiritualist } }
 				}
 				OR = {
 					has_technology = tech_mine_zro
-					has_ethic = "ethic_materialist"
-					has_ethic = "ethic_fanatic_materialist"
+					is_materialist = yes
 					is_gestalt = yes
 					event_target:FallenEmpireTaskOrigin = { NOT = { has_ethic = ethic_fanatic_spiritualist } }
 				}
@@ -277,8 +275,7 @@ give_fe_tech_gift = {
 					factor = 0
 					OR = {
 						has_technology = tech_psionic_theory
-						has_ethic = "ethic_materialist"
-						has_ethic = "ethic_fanatic_materialist"
+						is_materialist = yes
 						is_gestalt = yes
 						event_target:FallenEmpireTaskOrigin = { NOT = { has_ethic = ethic_fanatic_spiritualist } }
 					}
@@ -291,8 +288,7 @@ give_fe_tech_gift = {
 					OR = {
 						has_technology = tech_mine_zro
 						NOT = { has_technology = tech_psionic_theory }
-						has_ethic = "ethic_materialist"
-						has_ethic = "ethic_fanatic_materialist"
+						is_materialist = yes
 						is_gestalt = yes
 						event_target:FallenEmpireTaskOrigin = { NOT = { has_ethic = ethic_fanatic_spiritualist } }
 					}
@@ -554,9 +550,9 @@ give_fe_tech_gift = {
 						}
 					}
 				}
-				OR = {
-					NOT = { has_global_flag = tech_sentry_array }
-					NOT = { host_has_dlc = "Utopia" }
+				NAND = {
+					has_global_flag = tech_sentry_array
+					host_has_dlc = "Utopia"
 				}
 				OR = {
 					NOT = { has_global_flag = tech_interstellar_assembly }
@@ -664,9 +660,9 @@ give_fe_tech_gift = {
 			1 = {
 				modifier = {
 					factor = 0
-					OR = {
-						NOT = { has_global_flag = tech_sentry_array }
-						NOT = { host_has_dlc = "Utopia" }
+					NAND = {
+						has_global_flag = tech_sentry_array
+						host_has_dlc = "Utopia"
 					}
 				}
 				modifier = {

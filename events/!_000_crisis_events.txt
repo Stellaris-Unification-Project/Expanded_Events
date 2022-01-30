@@ -48,10 +48,7 @@ country_event = {
 						AND = {
 							exists = space_owner
 							space_owner = {
-								NOR = {
-									is_country_type = fallen_empire
-									is_country_type = awakened_fallen_empire
-								}
+								is_fallen_empire = no
 							}
 						}
 					}
@@ -60,10 +57,8 @@ country_event = {
 						any_neighbor_system = {
 							exists = space_owner
 							space_owner = {	
-								OR = {
-									is_country_type = fallen_empire
-									is_country_type = awakened_fallen_empire
-								}
+								
+									is_fallen_empire = yes
 							}
 						}
 					}
@@ -115,10 +110,7 @@ country_event = {
 						AND = {
 							exists = space_owner
 							space_owner = {
-								NOR = {
-									is_country_type = fallen_empire
-									is_country_type = awakened_fallen_empire
-								}
+								is_fallen_empire = no
 							}
 						}
 					}
@@ -127,10 +119,8 @@ country_event = {
 						any_neighbor_system = {
 							exists = space_owner
 							space_owner = {
-								OR = {
-									is_country_type = fallen_empire
-									is_country_type = awakened_fallen_empire
-								}
+								
+									is_fallen_empire = yes
 							}
 						}
 					}
@@ -259,10 +249,8 @@ country_event = {
 				limit = {
 					NOR = {
 						any_country = {
-							OR = {
-								is_country_type = fallen_empire
-								is_country_type = awakened_fallen_empire
-							}
+							
+								is_fallen_empire = yes
 							any_system_within_border = {
 								is_same_value = prev
 							}
@@ -621,8 +609,7 @@ country_event = {
 			limit = {
 				OR = {
 					is_country_type = default
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+					is_fallen_empire = yes
 				}
 				intel_level = {
 					level = high
@@ -635,8 +622,7 @@ country_event = {
 			limit = {
 				OR = {
 					is_country_type = default
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+					is_fallen_empire = yes
 				}
 				NOT = {
 					intel_level = {
@@ -741,7 +727,7 @@ country_event = {
 			country_event = { id = megaexpanded.11 days = 1470 random = 200 }
 		}
 		# Synths Act Strange
-		every_country = {
+		every_playable_country = {
 			limit = { is_country_type = default }
 			country_event = { id = crisis.2006 days = 100 random = 200 }
 		}
@@ -751,22 +737,22 @@ country_event = {
 			country_event = { id = crisis.2500 days = 100 random = 200 }
 		}
 		# Synths Disappear
-		every_country = {
+		every_playable_country = {
 			limit = { is_country_type = default }
 			country_event = { id = crisis.2007 days = 400 random = 200 }
 		}
 		# Synthetic Disappearances
-		every_country = {
+		every_playable_country = {
 			limit = { is_country_type = default }
 			country_event = { id = crisis.2020 days = 700 random = 200 }
 		}
 		# The Summons
-		every_country = {
+		every_playable_country = {
 			limit = { is_country_type = default }
 			country_event = { id = crisis.2021 days = 1000 random = 200 }
 		}
 		# The Arrival
-		every_country = {
+		every_playable_country = {
 			limit = { is_country_type = default }
 			country_event = { id = crisis.2022 days = 1400 }
 		}
@@ -791,7 +777,7 @@ country_event = {
 			planet_event = { id = crisis.2028 days = 1600 random = 10 }
 		}
 		# Synth Infiltration
-		every_country = {
+		every_playable_country = {
 			limit = { is_country_type = default }
 			if = {
 				limit = {
@@ -825,8 +811,10 @@ country_event = {
 	title = "TRANSMISSION"
 	desc = {
 		trigger = {
-			NOT = { has_authority = auth_machine_intelligence }
-			NOT = { has_global_flag = contingency_singularity }
+			NOR = {
+				has_authority = auth_machine_intelligence
+				has_global_flag = contingency_singularity
+			}
 			NOT = { has_global_flag = contingency_citadel }
 		}
 		text = crisis.2023.desc
@@ -834,8 +822,10 @@ country_event = {
 	desc = {
 		trigger = {
 			has_authority = auth_machine_intelligence
-			NOT = { has_global_flag = contingency_singularity }
-			NOT = { has_global_flag = contingency_citadel }
+			NOR = {
+				has_global_flag = contingency_singularity
+				has_global_flag = contingency_citadel
+			}
 		}
 		text = crisis.2023.desc.b
 	}
@@ -855,8 +845,10 @@ country_event = {
 	}
 	desc = {
 		trigger = {
-			NOT = { has_authority = auth_machine_intelligence }
-			NOT = { has_global_flag = contingency_singularity }
+			NOR = {
+				has_authority = auth_machine_intelligence
+				has_global_flag = contingency_singularity
+			}
 			has_global_flag = contingency_citadel
 		}
 		text = crisis.2023.desc_citadel
@@ -907,10 +899,7 @@ country_event = {
 	desc = {
 		text = crisis.2300.desc_02_crisis
 		trigger = {
-			NOR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = no
 			OR = {
 				has_megastructure = crisis_sphere_0
 				has_megastructure = crisis_sphere_1
@@ -935,10 +924,7 @@ country_event = {
 	desc = {
 		text = crisis.2300.desc_03_crisis
 		trigger = {
-			NOR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = no
 			OR = {
 				has_megastructure = crisis_sphere_0
 				has_megastructure = crisis_sphere_1
@@ -953,10 +939,7 @@ country_event = {
 	desc = {
 		text = crisis.2300.desc_05
 		trigger = {
-			OR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = yes
 			NOR = {
 				has_megastructure = crisis_sphere_0
 				has_megastructure = crisis_sphere_1
@@ -968,10 +951,7 @@ country_event = {
 	desc = {
 		text = crisis.2300.desc_05_crisis
 		trigger = {
-			OR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = yes
 			OR = {
 				has_megastructure = crisis_sphere_0
 				has_megastructure = crisis_sphere_1
@@ -983,10 +963,7 @@ country_event = {
 	desc = {
 		text = crisis.2300.desc_06
 		trigger = {
-			OR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = yes
 			NOR = {
 				has_megastructure = crisis_sphere_0
 				has_megastructure = crisis_sphere_1
@@ -998,10 +975,7 @@ country_event = {
 	desc = {
 		text = crisis.2300.desc_06_crisis
 		trigger = {
-			OR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = yes
 			OR = {
 				has_megastructure = crisis_sphere_0
 				has_megastructure = crisis_sphere_1
@@ -1098,8 +1072,8 @@ country_event = {
 		name = crisis.2300.a
 		trigger = {
 			has_global_flag = contingency_singularity
-			NOT = { exists = event_target:contingency_singularity_causer }
 			NOR = {
+				exists = event_target:contingency_singularity_causer
 				has_megastructure = crisis_sphere_0
 				has_megastructure = crisis_sphere_1
 				has_megastructure = crisis_sphere_2
@@ -1126,10 +1100,7 @@ country_event = {
 	option = {
 		name = crisis.2300.b
 		trigger = {
-			OR = {
-				has_authority = auth_machine_intelligence
-				has_country_flag = synthetic_empire
-			}
+			is_synthetic_empire = yes
 		}
 		is_dialog_only = yes
 		response_text = crisis.2300.b.response
@@ -1154,10 +1125,7 @@ country_event = {
 	option = {
 		name = crisis.2300.e
 		trigger = {
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			NOT = { has_global_flag = contingency_singularity }
 		}
 		is_dialog_only = yes
@@ -1166,10 +1134,7 @@ country_event = {
 	option = {
 		name = crisis.2300.e
 		trigger = {
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 			has_global_flag = contingency_singularity
 		}
 		is_dialog_only = yes

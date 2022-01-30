@@ -201,7 +201,7 @@ planet_event = {
 						OR = {
 							NOT = {
 								any_spynetwork = {
-									owner = { is_same_value = root.owner }
+									is_owned_by = root.owner
 									target = { is_same_value = from }
 								}
 							}
@@ -230,7 +230,7 @@ planet_event = {
                     limit = {
 						owner = {
 							any_spynetwork = {
-								owner = { is_same_value = root.owner }
+								is_owned_by = root.owner
 								target = { is_same_value = from }
 								is_spynetwork_level > 5
 							}
@@ -320,7 +320,7 @@ planet_event = {
 			limit = {
 				NOR = {
 					is_same_value = from
-					is_same_value = root.owner
+					is_same_empire = root.owner
 					AND = {
 						has_federation = yes
 						is_in_federation_with = from
@@ -384,7 +384,7 @@ planet_event = {
 			limit = {
 				owner = {
 					any_spynetwork = {
-						owner = { is_same_value = root.owner }
+						is_owned_by = root.owner
 						target = { is_same_value = from }
 						is_spynetwork_level > 5
 					}
@@ -765,7 +765,7 @@ ship_event = {
 				every_country = {
 					limit = {
 						NOT = {
-							ROOT = { owner = { is_same_value = PREVPREV } }
+							ROOT = { is_owned_by = PREVPREV }
 						}
 					}
 					country_event = { id = expandedrelics.7 days = 30 }
@@ -831,10 +831,8 @@ country_event = {
 		country_event = { id = progress.6 days = 3 }
 		random_country = {
 			limit = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				has_ethic = ethic_fanatic_materialist
 			}
 			save_event_target_as = materialist_fallen_empire
@@ -2328,8 +2326,10 @@ planet_event = {
    	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { exists = archaeological_site }
-		NOT = { has_planet_flag = suppress_archaeological_sites }
+		NOR = {
+			exists = archaeological_site
+			has_planet_flag = suppress_archaeological_sites
+		}
 	}
 	
 	immediate = {
@@ -2422,12 +2422,14 @@ event = {
 				}
 			}
 		}
-		any_country = {
+		any_playable_country = {
 			is_ai = no
 			any_planet_within_border = {
 				is_planet_class = pc_asteroid
-				NOT = { exists = archaeological_site }
-				NOT = { has_planet_flag = suppress_archaeological_sites }
+				NOR = {
+					exists = archaeological_site
+					has_planet_flag = suppress_archaeological_sites
+				}
 				has_deposit = no
 				NOT = {
 					solar_system = {
@@ -2439,13 +2441,15 @@ event = {
 	}
 	
 	immediate = {
-		random_country = {
+		random_playable_country = {
 			limit = {
 				is_ai = no
 				any_planet_within_border = {
 					is_planet_class = pc_asteroid
-					NOT = { exists = archaeological_site }
-					NOT = { has_planet_flag = suppress_archaeological_sites }
+					NOR = {
+						exists = archaeological_site
+						has_planet_flag = suppress_archaeological_sites
+					}
 					has_deposit = no
 					NOT = {
 						solar_system = {
@@ -2459,8 +2463,10 @@ event = {
 					random_planet_within_border = {
 						limit = {
 							is_planet_class = pc_asteroid
-							NOT = { exists = archaeological_site }
-							NOT = { has_planet_flag = suppress_archaeological_sites }
+							NOR = {
+								exists = archaeological_site
+								has_planet_flag = suppress_archaeological_sites
+							}
 							has_deposit = no
 							NOT = {
 								solar_system = {
@@ -2477,7 +2483,7 @@ event = {
 						factor = 2
 						# playing single player
 						NOT = {
-							count_country = {
+							count_playable_country = {
 								limit = { is_ai = no }
 								count > 1
 							}
@@ -2621,8 +2627,10 @@ planet_event = {
    	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { exists = archaeological_site }
-		NOT = { has_planet_flag = suppress_archaeological_sites }
+		NOR = {
+			exists = archaeological_site
+			has_planet_flag = suppress_archaeological_sites
+		}
 	}
 	
 	immediate = {
@@ -2683,8 +2691,10 @@ planet_event = {
    	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { exists = archaeological_site }
-		NOT = { has_planet_flag = suppress_archaeological_sites }
+		NOR = {
+			exists = archaeological_site
+			has_planet_flag = suppress_archaeological_sites
+		}
 	}
 	
 	immediate = {
@@ -2708,8 +2718,10 @@ planet_event = {
    	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { exists = archaeological_site }
-		NOT = { has_planet_flag = suppress_archaeological_sites }
+		NOR = {
+			exists = archaeological_site
+			has_planet_flag = suppress_archaeological_sites
+		}
 		NOT = { has_planet_flag = has_been_terraformed }
 		NOT = { has_global_flag = site_strange_fossils_found }
 		is_homeworld = no
@@ -2758,8 +2770,10 @@ planet_event = {
 		habitable_planet = yes
 		is_homeworld = no
 		last_district_changed = district_mining
-		NOT=  { has_global_flag = ancient_battle_site_found }
-		NOT = { exists = archaeological_site }
+		NOR = {
+			has_global_flag = ancient_battle_site_found
+			exists = archaeological_site
+		}
 		NOT = { has_planet_flag = suppress_archaeological_sites }
 		NOT = {
 			any_system = {
@@ -2801,8 +2815,10 @@ planet_event = {
    	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { exists = archaeological_site }
-		NOT = { has_planet_flag = suppress_archaeological_sites }
+		NOR = {
+			exists = archaeological_site
+			has_planet_flag = suppress_archaeological_sites
+		}
 	}
 
     option = {
@@ -2830,8 +2846,10 @@ country_event = {
     	any_planet_within_border = {
 			has_deposit = no
 			is_barren = yes
-			NOT = { exists = archaeological_site }
-			NOT = { has_planet_flag = suppress_archaeological_sites }
+			NOR = {
+				exists = archaeological_site
+				has_planet_flag = suppress_archaeological_sites
+			}
 			solar_system = {
 				any_system_planet = { has_deposit_for = shipclass_research_station }
 			}
@@ -2876,8 +2894,10 @@ country_event = {
 		any_planet_within_border = {
 			has_deposit = no
 			is_barren = yes
-			NOT = { exists = archaeological_site }
-			NOT = { has_planet_flag = suppress_archaeological_sites }
+			NOR = {
+				exists = archaeological_site
+				has_planet_flag = suppress_archaeological_sites
+			}
 			solar_system = {
 				any_system_planet = { has_deposit_for = shipclass_research_station }
 			}
@@ -2898,8 +2918,10 @@ country_event = {
 			limit = {
 				has_deposit = no
 				is_barren = yes
-				NOT = { exists = archaeological_site }
-				NOT = { has_planet_flag = suppress_archaeological_sites }
+				NOR = {
+					exists = archaeological_site
+					has_planet_flag = suppress_archaeological_sites
+				}
 				solar_system = {
 					any_system_planet = { has_deposit_for = shipclass_research_station }
 				}
@@ -2961,8 +2983,10 @@ planet_event = {
 	
 	trigger = {
 		is_planet_class = pc_relic
-		NOT = { exists = archaeological_site }
-		NOT = { has_planet_flag = suppress_archaeological_sites }
+		NOR = {
+			exists = archaeological_site
+			has_planet_flag = suppress_archaeological_sites
+		}
 		NOT = { has_global_flag = site_target_from_orbit_found }
 		NOT = {
 			any_system = {
@@ -3519,10 +3543,8 @@ fleet_event = {
 		fromfrom = { set_site_progress_locked = yes }
 		random_country = {
 			limit = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				has_ethic = ethic_fanatic_materialist
 			}
 			save_event_target_as = materialist_fallen_empire
@@ -3551,10 +3573,8 @@ country_event = {
 		has_country_flag = owns_mat_fe_archive_plans
 		NOT = { has_country_flag = fe_mat_asks_for_plans }
 		any_country = {
-			OR = {
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
-			}
+			
+				is_fallen_empire = yes
 			has_ethic = ethic_fanatic_materialist
 			NOT = { is_at_war_with = ROOT }
 			has_communications = ROOT
@@ -3568,10 +3588,8 @@ country_event = {
 	immediate = {
 		random_country = {
 			limit = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				has_ethic = ethic_fanatic_materialist
 			}
 			save_event_target_as = materialist_fallen_empire
@@ -3940,14 +3958,16 @@ fleet_event = {
 				}
 				OR = {
 					has_owner = no
-					owner = { is_same_value = root.owner }
+					is_owned_by = root.owner
 				}
 				any_system_planet = {
 					is_barren = yes
 					has_anomaly = no
 					has_deposit = no
-					NOT = { exists = archaeological_site }
-					NOT = { has_planet_flag = suppress_archaeological_sites }
+					NOR = {
+						exists = archaeological_site
+						has_planet_flag = suppress_archaeological_sites
+					}
 				}
 				NOT = {
 					any_system_planet = {
@@ -3961,8 +3981,10 @@ fleet_event = {
 					is_barren = yes
 					has_anomaly = no
 					has_deposit = no
-					NOT = { exists = archaeological_site }
-					NOT = { has_planet_flag = suppress_archaeological_sites }
+					NOR = {
+						exists = archaeological_site
+						has_planet_flag = suppress_archaeological_sites
+					}
 				}
 				create_archaeological_site = site_mega_engineering_2
 			}
@@ -5076,10 +5098,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}
@@ -5112,10 +5132,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}
@@ -5147,10 +5165,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}
@@ -5189,10 +5205,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}
@@ -5224,10 +5238,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}
@@ -5321,10 +5333,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}
@@ -5363,10 +5373,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}
@@ -5398,10 +5406,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}
@@ -5433,10 +5439,8 @@ fleet_event = {
 		random_country = {
 			limit = {
 				has_ethic = ethic_fanatic_spiritualist
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallenspir
 		}

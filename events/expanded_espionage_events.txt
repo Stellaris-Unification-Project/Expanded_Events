@@ -67,17 +67,23 @@ espionage_operation_event = {
 				target = {
 					is_unfriendly = no
 					is_xenophobe = no
-					NOT = { has_valid_civic = civic_closed_collective }
-					NOT = { has_valid_civic = civic_closed_network }
-					NOT = { is_at_war_with = root.owner }
-					NOT = { has_closed_borders = root.owner }
+					NOR = {
+						has_valid_civic = civic_closed_collective
+						has_valid_civic = civic_closed_network
+					}
+					NOR = {
+						is_at_war_with = root.owner
+						has_closed_borders = root.owner
+					}
 					opinion_level = { who = root.owner level >= poor }
 				}
 				owner = {
 					is_unfriendly = no
 					is_xenophobe = no
-					NOT = { has_valid_civic = civic_closed_collective }
-					NOT = { has_valid_civic = civic_closed_network }
+					NOR = {
+						has_valid_civic = civic_closed_collective
+						has_valid_civic = civic_closed_network
+					}
 				}
 			}
 			set_espionage_operation_flag = awaken_worm_cover

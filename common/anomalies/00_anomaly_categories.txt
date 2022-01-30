@@ -277,8 +277,10 @@ collision_asteroid_category = {
 				owner = { NOT = { has_country_flag = anomaly_55_happened } }
 				leader = {
 					has_skill < 3
-					NOT = { has_trait = leader_trait_meticulous }
-					NOT = { has_trait = leader_trait_cataloger }
+					NOR = {
+						has_trait = leader_trait_meticulous
+						has_trait = leader_trait_cataloger
+					}
 					NOT = { has_trait = leader_trait_expertise_new_worlds }
 				}
 			}
@@ -804,8 +806,10 @@ impact_uninhabitable_category = {
 				add = 1
 				leader = {
 					has_skill < 3
-					NOT = { has_trait = leader_trait_meticulous }
-					NOT = { has_trait = leader_trait_cataloger }
+					NOR = {
+						has_trait = leader_trait_meticulous
+						has_trait = leader_trait_cataloger
+					}
 					NOT = { has_trait = leader_trait_expertise_new_worlds }
 				}
 			}
@@ -847,8 +851,10 @@ energy_uninhabitable_category = {
 				}
 				leader = {
 					has_skill < 3
-					NOT = { has_trait = leader_trait_expertise_particles }
-					NOT = { has_trait = leader_trait_expertise_field_manipulation }
+					NOR = {
+						has_trait = leader_trait_expertise_particles
+						has_trait = leader_trait_expertise_field_manipulation
+					}
 				}
 			}
 			anomaly_event = anomaly_failure.1400
@@ -908,10 +914,14 @@ signal_uninhabitable_category = {
 				add = 1
 				leader = {
 					has_skill < 3
-					NOT = { has_trait = leader_trait_meticulous }
-					NOT = { has_trait = leader_trait_cataloger }
-					NOT = { has_trait = leader_trait_expertise_propulsion }
-					NOT = { has_trait = leader_trait_expertise_field_manipulation }
+					NOR = {
+						has_trait = leader_trait_meticulous
+						has_trait = leader_trait_cataloger
+					}
+					NOR = {
+						has_trait = leader_trait_expertise_propulsion
+						has_trait = leader_trait_expertise_field_manipulation
+					}
 				}
 			}
 			anomaly_event = anomaly_failure.18
@@ -1032,8 +1042,10 @@ life_toxic_category = {
 				}
 				leader = {
 					has_skill < 3
-					NOT = { has_trait = leader_trait_meticulous }
-					NOT = { has_trait = leader_trait_cataloger }
+					NOR = {
+						has_trait = leader_trait_meticulous
+						has_trait = leader_trait_cataloger
+					}
 					NOT = { has_trait = leader_trait_expertise_new_worlds }
 					NOT = { has_trait = leader_trait_expertise_biology }
 				}
@@ -1070,8 +1082,10 @@ life_frozen_category = {
 				}
 				leader = {
 					has_skill < 3
-					NOT = { has_trait = leader_trait_meticulous }
-					NOT = { has_trait = leader_trait_cataloger }
+					NOR = {
+						has_trait = leader_trait_meticulous
+						has_trait = leader_trait_cataloger
+					}
 					NOT = { has_trait = leader_trait_expertise_new_worlds }
 					NOT = { has_trait = leader_trait_expertise_biology }
 				}
@@ -1117,8 +1131,10 @@ life_barren_category = {
 				}
 				leader = {
 					has_skill < 3
-					NOT = { has_trait = leader_trait_meticulous }
-					NOT = { has_trait = leader_trait_cataloger }
+					NOR = {
+						has_trait = leader_trait_meticulous
+						has_trait = leader_trait_cataloger
+					}
 					NOT = { has_trait = leader_trait_expertise_new_worlds }
 					NOT = { has_trait = leader_trait_expertise_biology }
 				}
@@ -1150,7 +1166,7 @@ station_uninhabitable_category = {
 						max_jumps = 3
 					}
 					exists = space_owner
-					space_owner = { is_same_value = from.owner }
+					is_owned_by = from.owner
 				}
 			}
 		}
@@ -1167,10 +1183,14 @@ station_uninhabitable_category = {
 				add = 1
 				leader = {
 					has_skill < 3
-					NOT = { has_trait = leader_trait_meticulous }
-					NOT = { has_trait = leader_trait_cataloger }
-					NOT = { has_trait = leader_trait_expertise_materials }
-					NOT = { has_trait = leader_trait_expertise_voidcraft }
+					NOR = {
+						has_trait = leader_trait_meticulous
+						has_trait = leader_trait_cataloger
+					}
+					NOR = {
+						has_trait = leader_trait_expertise_materials
+						has_trait = leader_trait_expertise_voidcraft
+					}
 				}
 			}
 			anomaly_event = anomaly_failure.22

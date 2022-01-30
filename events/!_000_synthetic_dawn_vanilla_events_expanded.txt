@@ -15,10 +15,7 @@ planet_event = { #uprising
 	desc = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_materialist
-					has_ethic = ethic_fanatic_materialist
-				}
+				is_materialist = yes
 			}
 		}
 		text = syndaw.1020.desc.mater
@@ -26,10 +23,7 @@ planet_event = { #uprising
 	desc = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
+				is_spiritualist = yes
 			}
 		}
 		text = syndaw.1020.desc.spiri
@@ -37,10 +31,7 @@ planet_event = { #uprising
 	desc = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-				}
+				is_militarist = yes
 			}
 		}
 		text = syndaw.1020.desc.milit
@@ -48,10 +39,7 @@ planet_event = { #uprising
 	desc = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-				}
+				is_pacifist = yes
 			}
 		}
 		text = syndaw.1020.desc.pacif
@@ -59,10 +47,7 @@ planet_event = { #uprising
 	desc = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-				}
+				is_egalitarian = yes
 			}
 		}
 		text = syndaw.1020.desc.egali
@@ -70,10 +55,7 @@ planet_event = { #uprising
 	desc = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-				}
+				is_authoritarian = yes
 			}
 		}
 		text = syndaw.1020.desc.autho
@@ -81,10 +63,7 @@ planet_event = { #uprising
 	desc = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}
+				is_xenophile = yes
 			}
 		}
 		text = syndaw.1020.desc.phile
@@ -92,10 +71,7 @@ planet_event = { #uprising
 	desc = {
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 		}
 		text = syndaw.1020.desc.phobe
@@ -104,22 +80,14 @@ planet_event = { #uprising
 		trigger = {
 			owner = {
 				NOR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_authoritarian
-					has_ethic = ethic_fanatic_authoritarian
-					has_ethic = ethic_egalitarian
-					has_ethic = ethic_fanatic_egalitarian
-					has_ethic = ethic_pacifist
-					has_ethic = ethic_fanatic_pacifist
-					has_ethic = ethic_militarist
-					has_ethic = ethic_fanatic_militarist
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-					has_ethic = ethic_materialist
-					has_ethic = ethic_fanatic_materialist
+					is_xenophobe = yes
+					is_xenophile = yes
+					is_authoritarian = yes
+					is_egalitarian = yes
+					is_pacifist = yes
+					is_militarist = yes
+					is_spiritualist = yes
+					is_materialist = yes
 				}
 			}
 		}
@@ -186,14 +154,14 @@ planet_event = { #uprising
 				owned_planets_percentage = 0.5
 				planet_limit = {
 					OR = {
-						controller = { is_same_value = root.owner }
+						controller = { is_same_empire = root.owner }
 						solar_system = {
 							exists = starbase
-							starbase = { owner = { is_same_value = root.owner } }
+							starbase = { is_owned_by = root.owner }
 						}
 					}
 					solar_system = { # never flip any planets in the capital system
-						NOT = { any_system_planet = { is_same_value = root.owner.capital_scope } }
+						NOT = { any_system_planet = { is_same_empire = root.owner.capital_scope } }
 					}
 				}
 				effect = {
@@ -515,7 +483,7 @@ country_event = {
 				every_fleet_in_system = {
 					limit = {
 						exists = owner
-						owner = { is_same_value = event_target:current_uprising_originator }
+						is_owned_by = event_target:current_uprising_originator
 						any_owned_ship = { is_ship_class = shipclass_military_station }
 					}
 					set_owner = root
@@ -646,7 +614,7 @@ country_event = {
 						has_star_flag = machup_system_flip
 						exists = starbase
 						starbase = {
-							owner = { is_same_value = event_target:current_uprising_originator }
+							is_owned_by = event_target:current_uprising_originator
 						}
 					}
 				}
@@ -655,7 +623,7 @@ country_event = {
 						has_star_flag = machup_system_flip
 						exists = starbase
 						starbase = {
-							owner = { is_same_value = event_target:current_uprising_originator }
+							is_owned_by = event_target:current_uprising_originator
 						}
 					}
 					starbase = { set_owner = root }
@@ -675,7 +643,7 @@ country_event = {
 						every_fleet_in_system = {
 							limit = {
 								exists = owner
-								owner = { is_same_value = event_target:current_uprising_originator }
+								is_owned_by = event_target:current_uprising_originator
 								any_owned_ship = { is_ship_class = shipclass_military_station }
 							}
 							set_owner = root

@@ -333,8 +333,10 @@ planet_event = { #strong magnetic field good
 	
 	trigger = {
 		has_modifier = "strong_magnetic_field"
-		NOT = { has_modifier = "magnetic_research_boost" }
-		NOT = { has_modifier = "magnetic_disruption" }
+		NOR = {
+			has_modifier = "magnetic_research_boost"
+			has_modifier = "magnetic_disruption"
+		}
 		NOT = { has_planet_flag = magnetic_mystery_solved }
 		num_pops > 0
 	}
@@ -488,8 +490,10 @@ planet_event = {
 			limit = { 
 				has_modifier = strong_magnetic_field
 				has_modifier = "strong_magnetic_field"
-				NOT = { has_modifier = "magnetic_research_boost" }
-				NOT = { has_modifier = "magnetic_disruption" }
+				NOR = {
+					has_modifier = "magnetic_research_boost"
+					has_modifier = "magnetic_disruption"
+				}
 				has_ground_combat = no
 				num_pops > 0
 			}

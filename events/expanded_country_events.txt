@@ -199,7 +199,7 @@ country_event = {
 						NOT = { exists = space_owner }
 						AND = {
 							exists = space_owner
-							space_owner = { is_same_value = ROOT }
+							is_owned_by = ROOT
 						}
 					}
 				}
@@ -224,10 +224,8 @@ country_event = {
 					has_country_flag = human_1
 					has_country_flag = human_2
 					AND = {
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 						has_ethic = ethic_fanatic_xenophobe
 					}
 				}
@@ -386,7 +384,7 @@ country_event = {
 						NOT = { exists = space_owner }
 						AND = {
 							exists = space_owner
-							space_owner = { is_same_value = ROOT }
+							is_owned_by = ROOT
 						}
 						AND = {
 							exists = space_owner
@@ -533,7 +531,7 @@ country_event = {
 						NOT = { exists = space_owner }
 						AND = {
 							exists = space_owner
-							space_owner = { is_same_value = ROOT }
+							is_owned_by = ROOT
 						}
 						AND = {
 							exists = space_owner
@@ -1201,8 +1199,7 @@ ship_event = {
 			limit = { FROM = { has_star_flag = colony_system_3 } }
 			owner = { remove_point_of_interest = com_search_poi.3 }
 			solar_system = {
-				random_system_planet = {
-					limit = { is_star = yes }
+				star = {
 					save_event_target_as = colony_planet_3
 					prevent_anomaly = yes
 					create_ambient_object = {
@@ -1325,10 +1322,8 @@ ship_event = {
 					factor = 0
 					NOT = {
 						any_country = {
-							OR = {
-								is_country_type = fallen_empire
-								is_country_type = awakened_fallen_empire
-							}
+							
+								is_fallen_empire = yes
 							has_ethic = ethic_fanatic_xenophile
 							any_owned_planet = {
 								has_planet_flag = fe_the_preserve
@@ -1448,10 +1443,8 @@ ship_event = {
 		hidden_effect = {
 			random_country = {
 				limit = {
-					OR = {
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
-					}
+					
+						is_fallen_empire = yes
 					has_ethic = ethic_fanatic_xenophile
 				}
 				save_event_target_as = xenophile_fallen_empire
@@ -2607,8 +2600,10 @@ planet_event = {
 	desc = {
 		text = "countryexpanded.38.a.desc"
 		trigger = {
-			NOT = { has_planet_flag = carpinus_shroud }
-			NOT = { has_planet_flag = carpinus_galaxy }
+			NOR = {
+				has_planet_flag = carpinus_shroud
+				has_planet_flag = carpinus_galaxy
+			}
 		}
 	}
 	desc = {
@@ -2693,8 +2688,10 @@ planet_event = {
 	option = {
 		name = OK
 		trigger = {
-			NOT = { has_planet_flag = carpinus_shroud }
-			NOT = { has_planet_flag = carpinus_galaxy }
+			NOR = {
+				has_planet_flag = carpinus_shroud
+				has_planet_flag = carpinus_galaxy
+			}
 		}
 		owner = {
 			create_point_of_interest = {
@@ -4035,7 +4032,7 @@ country_event = {
 			hidden_effect = {
 				random_spynetwork = {
 					limit = {
-						owner = { is_same_value = root }
+						is_owned_by = root
 						target = { is_same_value = event_target:contact_empire }
 					}
 					add_modifier = {
@@ -5118,7 +5115,7 @@ country_event = {
 			hidden_effect = {
 				random_spynetwork = {
 					limit = {
-						owner = { is_same_value = root }
+						is_owned_by = root
 						target = { is_same_value = event_target:from }
 					}
 					add_modifier = {
@@ -5178,10 +5175,8 @@ country_event = {
 			limit = {
 				NOT = {
 					any_relation = {
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 						has_ethic = ethic_fanatic_xenophile
 						has_communications = ROOT
 					}
@@ -5505,8 +5500,10 @@ country_event = {
 			exists = ruler
 			ruler = {
 				species = {
-					NOT = { species_portrait = "human" }
-					NOT = { is_same_value = prevprev.owner_species }
+					NOR = {
+						species_portrait = "human"
+						is_same_empire = prevprev.owner_species
+					}
 				}
 			}
 		}
@@ -5860,9 +5857,7 @@ country_event = {
 			is_country_type = lost_empire
 		}
 		NOR = {
-			has_valid_civic = civic_machine_terminator
-			has_valid_civic = civic_hive_devouring_swarm
-			has_valid_civic = civic_fanatic_purifiers
+			is_homicidal = yes
 			has_country_flag = fe_asked_for_nivlac
 		}
 		is_at_war = no
@@ -5937,19 +5932,13 @@ country_event = {
 		
 		if = {
 			limit = {
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-				}				
+				is_xenophile = yes				
 			}
 			add_modifier = { modifier = gave_up_pop_xenophile days = 3600 }
 		}
 		if = {
 			limit = {
-				NOR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile					
-				}				
+				is_xenophile = no				
 			}
 			add_modifier = { modifier = gave_up_pop days = 3600 }
 		}		
@@ -5993,10 +5982,7 @@ country_event = {
 	option = {
 		name = countryexpanded.104.c
 		trigger = {
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = { event_target:FallenEmpireTaskOrigin = { add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request } } }
@@ -6004,10 +5990,7 @@ country_event = {
 	option = {
 		name = countryexpanded.104.d
 		trigger = {
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 		}
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = { event_target:FallenEmpireTaskOrigin = { add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request } } }
@@ -6016,10 +5999,8 @@ country_event = {
 		name = fallen_empires_tasks.4.e
 		trigger = {
 			NOR = {		
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
+				is_egalitarian = yes
+				is_authoritarian = yes
 				any_owned_pop = {
 					has_trait = trait_nivlac
 					is_enslaved = yes
@@ -6263,10 +6244,7 @@ country_event = {
 	option = {
 		name = countryexpanded.108.b
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6277,10 +6255,7 @@ country_event = {
 	option = {
 		name = countryexpanded.108.c
 		trigger = {
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6291,10 +6266,7 @@ country_event = {
 	option = {
 		name = countryexpanded.108.d
 		trigger = {
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6306,12 +6278,9 @@ country_event = {
 		name = countryexpanded.108.e
 		trigger = {
 			NOR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe			
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian				
+				is_xenophobe = yes			
+				is_egalitarian = yes
+				is_authoritarian = yes				
 			}
 		}
 		ai_chance = {
@@ -6477,10 +6446,7 @@ country_event = {
 	option = {
 		name = countryexpanded.111.a
 		trigger = {
-			NOR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = no
 		}
 		ai_chance = {
 			factor = 90
@@ -6535,10 +6501,7 @@ country_event = {
 	option = {
 		name = countryexpanded.111.a.phobe
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		ai_chance = {
 			factor = 75
@@ -6586,10 +6549,7 @@ country_event = {
 	option = {
 		name = countryexpanded.111.b
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6600,10 +6560,7 @@ country_event = {
 	option = {
 		name = countryexpanded.111.c
 		trigger = {
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6614,10 +6571,7 @@ country_event = {
 	option = {
 		name = countryexpanded.111.d
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6628,10 +6582,7 @@ country_event = {
 	option = {
 		name = countryexpanded.111.f
 		trigger = {
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6643,14 +6594,10 @@ country_event = {
 		name = countryexpanded.108.e
 		trigger = {
 			NOR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe			
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
+				is_xenophobe = yes			
+				is_egalitarian = yes
+				is_xenophile = yes
+				is_authoritarian = yes
 			}
 		}
 		ai_chance = {
@@ -6682,8 +6629,10 @@ country_event = {
 		is_country_type = awakened_fallen_empire
 		is_at_war = no
 		has_crisis = no
-		NOT = { has_global_flag = war_in_heaven_ongoing }
-		NOT = { has_country_flag = guardians_of_the_galaxy }
+		NOR = {
+			has_global_flag = war_in_heaven_ongoing
+			has_country_flag = guardians_of_the_galaxy
+		}
 		NOT = { has_authority = auth_machine_intelligence }
 		any_country = {
 			NOT = { has_country_flag = FE_attempted_take_over }
@@ -6868,10 +6817,7 @@ country_event = {
 	option = {
 		name = countryexpanded.114.b
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6882,10 +6828,7 @@ country_event = {
 	option = {
 		name = countryexpanded.114.c
 		trigger = {
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6896,10 +6839,7 @@ country_event = {
 	option = {
 		name = countryexpanded.114.d
 		trigger = {
-			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-			}
+			is_spiritualist = yes
 		}
 		ai_chance = {
 			factor = 10
@@ -6911,12 +6851,9 @@ country_event = {
 		name = countryexpanded.114.e
 		trigger = {
 			NOR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe			
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
+				is_xenophobe = yes			
+				is_materialist = yes
+				is_spiritualist = yes
 			}
 		}
 		ai_chance = {
@@ -6979,7 +6916,7 @@ country_event = {
 			NOT = { has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task } }
 			NOT = { has_opinion_modifier = { who = prev modifier = opinion_majorly_failed_fallen_empire_task } }
 			
-			any_country = {
+			any_playable_country = {
 				is_country_type = default
 				NOR = {
 					is_in_federation_with = ROOT
@@ -7020,7 +6957,7 @@ country_event = {
 				NOT = { has_opinion_modifier = { who = prev modifier = opinion_failed_fallen_empire_task } }
 				NOT = { has_opinion_modifier = { who = prev modifier = opinion_majorly_failed_fallen_empire_task } }
 				
-				any_country = {
+				any_playable_country = {
 					is_country_type = default
 					NOR = {
 						is_in_federation_with = ROOT
@@ -7745,10 +7682,7 @@ country_event = {
 	option = {
 		name = countryexpanded.123.b
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 		}
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = { event_target:FallenEmpireTaskOrigin = { add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request } } }
@@ -7756,10 +7690,7 @@ country_event = {
 	option = {
 		name = countryexpanded.123.c
 		trigger = {
-			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-			}
+			is_materialist = yes
 		}
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = { event_target:FallenEmpireTaskOrigin = { add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request } } }
@@ -7767,10 +7698,7 @@ country_event = {
 	option = {
 		name = countryexpanded.123.d
 		trigger = {
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 		}
 		custom_tooltip = fallen_empire_unhappy_tooltip
 		hidden_effect = { event_target:FallenEmpireTaskOrigin = { add_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request } } }
@@ -7779,12 +7707,9 @@ country_event = {
 		name = countryexpanded.123.e
 		trigger = {
 			NOR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_materialist = yes
+				is_authoritarian = yes
+				is_xenophobe = yes
 			}
 		}
 		custom_tooltip = fallen_empire_unhappy_tooltip
@@ -8193,10 +8118,8 @@ ship_event = {
 	immediate = {
 		random_country = {
 			limit = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 				has_ethic = ethic_fanatic_xenophile
 			}
 			save_event_target_as = xenophile_fallen_empire
@@ -8219,10 +8142,8 @@ ship_event = {
 					limit = {
 						NOT = {
 							any_relation = {
-								OR = {
-									is_country_type = fallen_empire
-									is_country_type = awakened_fallen_empire
-								}
+								
+									is_fallen_empire = yes
 								has_ethic = ethic_fanatic_xenophile
 								has_communications = ROOT
 							}
@@ -9042,8 +8963,7 @@ fleet_event = {
 		from = {
 			planet = {
 				solar_system = {
-					random_system_planet = {
-						limit = { is_star = yes }
+					star = {
 						save_event_target_as = sunless_skies_sun
 						enable_special_project = {
 							name = "AKX_SUNLESS_SKIES"
@@ -9191,10 +9111,7 @@ country_event = {
 		set_global_flag = akx.9000.fired
 		event_target:horizonsignal_start_system = {
 			set_star_flag = horizonsignal_system
-			random_system_planet = {
-				limit = {
-					is_star = yes
-				}
+			star = {
 				save_global_event_target_as = horizonsignal_black_hole
 			}
 			save_global_event_target_as = horizonsignal_system
@@ -9204,10 +9121,7 @@ country_event = {
 	option = {
 		name = OK
 		event_target:horizonsignal_start_system = {
-			random_system_planet = {
-				limit = {
-					is_star = yes
-				}
+			star = {
 				enable_special_project = {
 					name  = HORIZON_SIGNAL_PROJECT
 					location = this
@@ -9658,7 +9572,7 @@ event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		random_country = {
+		random_playable_country = {
 			limit = {
 				is_ai = no
 				is_gestalt = no
@@ -9849,7 +9763,7 @@ event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		any_country = {
+		any_playable_country = {
 			is_ai = no
 			is_gestalt = no
 			OR = { is_country_type = default is_country_type = ascended_empire is_country_type = lost_empire }
@@ -9864,7 +9778,7 @@ event = {
 	}
 	
 	immediate = {
-		random_country = {
+		random_playable_country = {
 			limit = {
 				is_ai = no
 				is_gestalt = no
@@ -10928,7 +10842,7 @@ ship_event = {
 		FROM = {
 			add_modifier = { modifier = ancestrial_homeworld days = -1 }
 			if = {
-				limit = { NOT = { is_nuked = yes } }
+				limit = { is_nuked = no }
 				add_modifier = { modifier = "recovered_tomb_world" days = -1 }
 			}
 			hidden_effect = {
@@ -11448,10 +11362,8 @@ country_event = {
 				random_country = {
 					limit = {
 						has_ethic = ethic_fanatic_xenophile
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 					}
 					save_event_target_as = watcher_fe_empire
 				}
@@ -11460,10 +11372,8 @@ country_event = {
 				random_country = {
 					limit = {
 						has_ethic = ethic_fanatic_xenophobe
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 					}
 					save_event_target_as = watcher_fe_empire
 				}
@@ -11472,10 +11382,8 @@ country_event = {
 				random_country = {
 					limit = {
 						has_ethic = ethic_fanatic_materialist
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 					}
 					save_event_target_as = watcher_fe_empire
 				}
@@ -11484,10 +11392,8 @@ country_event = {
 				random_country = {
 					limit = {
 						has_ethic = ethic_fanatic_spiritualist
-						OR = {
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
-						}
+						
+							is_fallen_empire = yes
 					}
 					save_event_target_as = watcher_fe_empire
 				}
@@ -14195,8 +14101,10 @@ country_event = {
 		last_increased_tech = tech_colonization_3
 		any_owned_planet = {
 			has_deposit = d_preserve_habitability
-			NOT = { has_planet_flag = environmental_systems_failing }
-			NOT = { has_planet_flag = environmental_systems_fixed }
+			NOR = {
+				has_planet_flag = environmental_systems_failing
+				has_planet_flag = environmental_systems_fixed
+			}
 		}
 	}
 	
@@ -14204,8 +14112,10 @@ country_event = {
 		random_owned_planet = {
 			limit = {
 				has_deposit = d_preserve_habitability
-				NOT = { has_planet_flag = environmental_systems_failing }
-				NOT = { has_planet_flag = environmental_systems_fixed }
+				NOR = {
+					has_planet_flag = environmental_systems_failing
+					has_planet_flag = environmental_systems_fixed
+				}
 			}
 			set_planet_flag = environmental_systems_failing
 			planet_event = { id = countryexpanded.452 days = 360 random = 360 }
@@ -14220,8 +14130,10 @@ planet_event = {
 	trigger = {
 		mid_game_years_passed >= 0
 		has_deposit = d_preserve_habitability
-		NOT = { has_planet_flag = environmental_systems_failing }
-		NOT = { has_planet_flag = environmental_systems_fixed }
+		NOR = {
+			has_planet_flag = environmental_systems_failing
+			has_planet_flag = environmental_systems_fixed
+		}
 	}
 	
 	immediate = {
@@ -14615,10 +14527,8 @@ fleet_event = {
 	immediate = {
 		random_country = {
 			limit = {
-				OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
-				}
+				
+					is_fallen_empire = yes
 			}
 			save_event_target_as = fallen_empire_fight_1
 		}
@@ -14681,10 +14591,8 @@ fleet_event = {
 					factor = 0
 					NOT = {
 						any_country = {
-							OR = {
-								is_country_type = fallen_empire
-								is_country_type = awakened_fallen_empire
-							}
+							
+								is_fallen_empire = yes
 						}
 					}
 				}
@@ -15055,17 +14963,17 @@ planet_event = {
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 			}
@@ -15081,17 +14989,17 @@ planet_event = {
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 			}
@@ -15107,17 +15015,17 @@ planet_event = {
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 				create_army = {
 					name = "NAME_Xenomorphs_Army"
-					owner = last_created
+					owner = last_created_country
 					type = "xenomorph_army"
 				}
 			}

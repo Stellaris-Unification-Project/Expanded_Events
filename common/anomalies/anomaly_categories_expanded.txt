@@ -477,7 +477,7 @@ primitive_probe_anomaly = {
 							NOT = { exists = space_owner }
 							AND = {
 								exists = space_owner
-								space_owner = { is_same_value = from.owner }
+								is_owned_by = from.owner
 							}
 						}
 						OR = {
@@ -563,8 +563,10 @@ EXPANDED_PANSPERMIA_CAT = {
 	spawn_chance = {
 		modifier = {
 			add = 9999
-			NOT = { exists = owner }
-			NOT = { has_modifier = young_world }
+			NOR = {
+				exists = owner
+				has_modifier = young_world
+			}
 			OR = {
 				has_modifier = terraforming_candidate
 				AND = {

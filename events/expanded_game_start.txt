@@ -1016,7 +1016,7 @@ country_event = {
 					count = 24
 					random_owned_pop = {
 						limit = {
-							species = { is_same_value = ROOT.owner_species }
+							species = { is_same_empire = ROOT.owner_species }
 						}
 						kill_pop = yes
 					}
@@ -1027,7 +1027,7 @@ country_event = {
 			reroll_random = yes
 			random_owned_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1042,7 +1042,7 @@ country_event = {
 			reroll_random = yes
 			random_owned_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1057,7 +1057,7 @@ country_event = {
 			reroll_random = yes
 			random_owned_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1072,7 +1072,7 @@ country_event = {
 			reroll_random = yes
 			random_pool_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1087,7 +1087,7 @@ country_event = {
 			reroll_random = yes
 			random_pool_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1102,7 +1102,7 @@ country_event = {
 			reroll_random = yes
 			random_pool_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1117,7 +1117,7 @@ country_event = {
 			reroll_random = yes
 			random_pool_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1132,7 +1132,7 @@ country_event = {
 			reroll_random = yes
 			random_pool_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1147,7 +1147,7 @@ country_event = {
 			reroll_random = yes
 			random_pool_leader = {
 				limit = {
-					species = { is_same_value = ROOT.owner_species }
+					species = { is_same_empire = ROOT.owner_species }
 				}
 				random_list = {
 					1 = { change_species = event_target:preserve_species_1 }
@@ -1413,8 +1413,7 @@ event = {
 					AND = {
 						exists = space_owner 
 						space_owner = {
-							NOT = { is_country_type = fallen_empire }
-							NOT = { is_country_type = awakened_fallen_empire }
+							is_fallen_empire = no
 							NOT = { is_country_type = default }
 						}
 					}
@@ -1431,8 +1430,7 @@ event = {
 					AND = {
 						exists = space_owner 
 						space_owner = {
-							NOT = { is_country_type = fallen_empire }
-							NOT = { is_country_type = awakened_fallen_empire }
+							is_fallen_empire = no
 							NOT = { is_country_type = default }
 						}
 					}
@@ -1449,8 +1447,7 @@ event = {
 					AND = {
 						exists = space_owner 
 						space_owner = {
-							NOT = { is_country_type = fallen_empire }
-							NOT = { is_country_type = awakened_fallen_empire }
+							is_fallen_empire = no
 							NOT = { is_country_type = default }
 						}
 					}
@@ -1479,8 +1476,7 @@ event = {
 						AND = {
 							exists = space_owner 
 							space_owner = {
-								NOT = { is_country_type = fallen_empire }
-								NOT = { is_country_type = awakened_fallen_empire }
+								is_fallen_empire = no
 								NOT = { is_country_type = default }
 							}
 						}

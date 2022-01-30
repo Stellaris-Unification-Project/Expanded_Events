@@ -2141,10 +2141,7 @@ planet_event = {
 		custom_tooltip = uplift.7510.b.tooltip
 		trigger = {
 			owner = {
-				NOR = {
-					has_ethic = "ethic_xenophobe"
-					has_ethic = "ethic_fanatic_xenophobe"
-				}
+				is_xenophobe = no
 			}
 		}
 		owner = {
@@ -2165,10 +2162,7 @@ planet_event = {
 		name = uplift.7510.c
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = "ethic_xenophobe"
-					has_ethic = "ethic_fanatic_xenophobe"
-				}
+				is_xenophobe = yes
 			}
 		}
 		owner = {
@@ -2225,10 +2219,7 @@ planet_event = {
 		name = uplift.7520.a
 		trigger = {
 			owner = {
-				NOR = {
-					has_ethic = "ethic_xenophobe"
-					has_ethic = "ethic_fanatic_xenophobe"
-				}
+				is_xenophobe = no
 			}
 		}
 		owner = {
@@ -2244,10 +2235,7 @@ planet_event = {
 		custom_tooltip = uplift.7520.b.tooltip
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = "ethic_xenophobe"
-					has_ethic = "ethic_fanatic_xenophobe"
-				}
+				is_xenophobe = yes
 			}
 		}
 		owner = {
@@ -2264,10 +2252,7 @@ planet_event = {
 		name = uplift.7520.c
 		trigger = {
 			owner = {
-				OR = {
-					has_ethic = "ethic_xenophile"
-					has_ethic = "ethic_fanatic_xenophile"
-				}
+				is_xenophile = yes
 			}
 		}
 		hidden_effect = { planet_event = { id = uplift.7525 days = 5 } }

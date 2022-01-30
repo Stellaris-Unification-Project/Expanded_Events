@@ -110,10 +110,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -124,8 +122,7 @@ country_event = {
 		
 		trigger = {
 			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_materialist = yes
 			}
 		}
 	}
@@ -136,10 +133,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -286,10 +281,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -308,10 +301,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -390,10 +381,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = mem_primitives_religion }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		NOR = {
-			has_ethic = ethic_fanatic_militarist
-			has_ethic = ethic_militarist
-		}
+		is_militarist = no
 		
 		exists = home_planet
 		home_planet = {
@@ -460,10 +448,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -482,10 +468,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -646,10 +630,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -668,10 +650,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -743,10 +723,7 @@ country_event = {
 		}
 		NOT = { has_country_flag = mem_primitives_religion }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		NOR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
+		is_spiritualist = no
 		exists = home_planet
 		home_planet = {
 			has_observation_outpost = yes
@@ -800,10 +777,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -829,10 +804,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -908,14 +881,8 @@ country_event = {
 		NOT = { has_country_flag = mem_primitives_religion }
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		OR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-		}
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
+		is_authoritarian = yes
+		is_spiritualist = yes
 		exists = home_planet
 		home_planet = {
 			has_observation_outpost = yes
@@ -944,10 +911,7 @@ country_event = {
 				random_owned_pop = { pop_change_ethic = ethic_spiritualist }
 				if = {
 					limit = {
-						NOR = {
-							has_ethic = ethic_authoritarian
-							has_ethic = ethic_fanatic_authoritarian
-						}
+						is_authoritarian = no
 					}
 					shift_ethic = ethic_authoritarian
 					random_owned_pop = { pop_change_ethic = ethic_authoritarian }
@@ -960,10 +924,7 @@ country_event = {
 				random_owned_pop = { pop_change_ethic = ethic_authoritarian }
 				if = {
 					limit = {
-						NOR = {
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
-						}
+						is_spiritualist = no
 					}
 					shift_ethic = ethic_spiritualist
 					random_owned_pop = { pop_change_ethic = ethic_spiritualist }
@@ -1002,10 +963,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -1024,10 +983,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -1183,10 +1140,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -1206,10 +1161,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -1309,10 +1262,14 @@ country_event = {
 	trigger = {
 		is_country_type = primitive
 		host_has_dlc = "Necroids Species Pack" 
-		NOT = { has_country_flag = stone_age }
-		NOT = { has_country_flag = mem_primitives_religion }
-		NOT = { has_country_flag = primitives_politics }
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		NOR = {
+			has_country_flag = stone_age
+			has_country_flag = mem_primitives_religion
+		}
+		NOR = {
+			has_country_flag = primitives_politics
+			has_ethic = ethic_gestalt_consciousness
+		}
 		NOR = {
 			has_ethic = ethic_fanatic_egalitarian
 			has_ethic = ethic_materialist
@@ -1347,10 +1304,7 @@ country_event = {
 				random_owned_pop = { pop_change_ethic = ethic_militarist }
 				if = {
 					limit = {
-						NOR = {
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
-						}
+						is_spiritualist = no
 					}
 					shift_ethic = ethic_spiritualist
 					random_owned_pop = { pop_change_ethic = ethic_spiritualist }
@@ -1363,10 +1317,7 @@ country_event = {
 				random_owned_pop = { pop_change_ethic = ethic_authoritarian }
 				if = {
 					limit = {
-						NOR = {
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
-						}
+						is_spiritualist = no
 					}
 					shift_ethic = ethic_spiritualist
 					random_owned_pop = { pop_change_ethic = ethic_spiritualist }
@@ -1405,10 +1356,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -1427,10 +1376,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -1635,10 +1582,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -1657,10 +1602,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -1762,10 +1705,8 @@ country_event = {
 		NOT = { has_country_flag = primitives_spartacus }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		NOR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
+			is_pacifist = yes
+			is_egalitarian = yes
 		}
 		exists = home_planet
 		home_planet = {
@@ -1865,10 +1806,8 @@ country_event = {
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		OR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-			has_ethic = ethic_xenophobe
-			has_ethic = ethic_fanatic_xenophobe
+			is_authoritarian = yes
+			is_xenophobe = yes
 			owner_species = { has_trait = trait_decadent }
 		}
 		is_egalitarian = no
@@ -1987,10 +1926,7 @@ country_event = {
 		NOT = { has_country_flag = primitives_robot_fascination }
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		OR = {
-			has_ethic = ethic_materialist
-			has_ethic = ethic_fanatic_materialist
-		}
+		is_materialist = yes
 		exists = home_planet
 		home_planet = {
 			has_observation_outpost = yes
@@ -2100,10 +2036,7 @@ country_event = {
 		has_country_flag = primitives_robot_fascination
 		NOT = { has_country_flag = primitives_robot_progress }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		OR = {
-			has_ethic = ethic_materialist
-			has_ethic = ethic_fanatic_materialist
-		}
+		is_materialist = yes
 		exists = home_planet
 		home_planet = {
 			has_observation_outpost = yes
@@ -2194,10 +2127,7 @@ country_event = {
 		has_country_flag = primitives_robot_progress
 		NOT = { has_country_flag = primitives_mechanist }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		OR = {
-			has_ethic = ethic_materialist
-			has_ethic = ethic_fanatic_materialist
-		}
+		is_materialist = yes
 		exists = home_planet
 		home_planet = {
 			has_observation_outpost = yes
@@ -2293,8 +2223,10 @@ country_event = {
 	trigger = {
 		is_country_type = primitive
 		has_country_flag = steam_age
-		NOT = { has_country_flag = primitives_betharian }
-		NOT = { has_country_flag = recently_advanced }
+		NOR = {
+			has_country_flag = primitives_betharian
+			has_country_flag = recently_advanced
+		}
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		exists = home_planet
 		home_planet = {
@@ -2363,8 +2295,10 @@ country_event = {
 	trigger = {
 		is_country_type = primitive
 		has_country_flag = early_space_age
-		NOT = { has_country_flag = mem_primitives_moon }
-		NOT = { has_country_flag = primitives_ftl_experiments }
+		NOR = {
+			has_country_flag = mem_primitives_moon
+			has_country_flag = primitives_ftl_experiments
+		}
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		exists = home_planet
 		home_planet = {
@@ -2489,8 +2423,10 @@ country_event = {
 	trigger = {
 		is_country_type = primitive
 		has_country_flag = early_space_age
-		NOT = { has_country_flag = primitives_ftl_experiments }
-		NOT = { has_country_flag = recently_advanced }
+		NOR = {
+			has_country_flag = primitives_ftl_experiments
+			has_country_flag = recently_advanced
+		}
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		exists = home_planet
 		home_planet = {
@@ -2550,8 +2486,10 @@ country_event = {
 	trigger = {
 		is_country_type = primitive
 		has_country_flag = stone_age
-		NOT = { has_country_flag = recently_advanced }
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		NOR = {
+			has_country_flag = recently_advanced
+			has_ethic = ethic_gestalt_consciousness
+		}
 		exists = home_planet
 		home_planet = {
 			has_observation_outpost = yes
@@ -2855,8 +2793,10 @@ country_event = {
 	trigger = {
 		is_country_type = primitive
 		has_country_flag = stone_age
-		NOT = { has_country_flag = recently_advanced }
-		NOT = { has_ethic = ethic_gestalt_consciousness }
+		NOR = {
+			has_country_flag = recently_advanced
+			has_ethic = ethic_gestalt_consciousness
+		}
 		exists = home_planet
 		home_planet = {
 			has_observation_outpost = yes
@@ -2935,10 +2875,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.5
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 		}
 	}
 	
@@ -2953,12 +2890,9 @@ country_event = {
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		NOR = {
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-			has_ethic = ethic_xenophile
-			has_ethic = ethic_fanatic_xenophile
+			is_egalitarian = yes
+			is_pacifist = yes
+			is_xenophile = yes
 			owner_species = { has_trait = trait_communal }
 			owner_species = { has_trait = trait_weak }
 			owner_species = { has_trait = trait_deviants }
@@ -3074,10 +3008,7 @@ country_event = {
 			has_country_flag = iron_age
 			has_country_flag = late_medieval_age
 		}
-		OR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+		is_pacifist = yes
 		OR = {
 			owner_species = { has_trait = trait_agrarian }
 			owner_species = { has_trait = trait_natural_sociologists }
@@ -3390,8 +3321,7 @@ country_event = {
 		modifier = {
 			factor = 0.5
 			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
+				is_authoritarian = yes
 				has_ethic = ethic_fanatic_spiritualist
 			}
 		}
@@ -3406,10 +3336,7 @@ country_event = {
 			has_country_flag = early_space_age
 			has_country_flag = mem_lunar_age
 		}
-		OR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
+		is_spiritualist = yes
 		NOT = { has_ethic = ethic_fanatic_egalitarian }
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
@@ -3453,10 +3380,7 @@ country_event = {
 				}
 				if = {
 					limit = {
-						NOR = {
-							has_ethic = ethic_spiritualist
-							has_ethic = ethic_fanatic_spiritualist
-						}
+						is_spiritualist = no
 					}
 					shift_ethic = ethic_spiritualist
 					random_owned_pop = { pop_change_ethic = ethic_spiritualist }
@@ -3531,10 +3455,7 @@ country_event = {
 			has_country_flag = early_space_age
 			has_country_flag = mem_lunar_age
 		}
-		NOR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-		}
+		is_authoritarian = no
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		exists = home_planet
@@ -3630,8 +3551,7 @@ country_event = {
 		modifier = {
 			factor = 0.5
 			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_materialist = yes
 				has_ethic = ethic_militarist
 				owner_species = { has_trait = trait_deviants }
 			}
@@ -3648,8 +3568,7 @@ country_event = {
 		NOT = { has_country_flag = primitives_french_revolution }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		NOR = {
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
+			is_egalitarian = yes
 			owner_species = { has_trait = trait_decadent }
 		}
 		exists = home_planet
@@ -3743,10 +3662,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.5
-			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-			}
+			is_militarist = yes
 		}
 	}
 	
@@ -3758,10 +3674,7 @@ country_event = {
 			has_country_flag = renaissance_age
 			has_country_flag = machine_age
 		}
-		NOR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+		is_pacifist = no
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		exists = home_planet
@@ -4037,10 +3950,7 @@ country_event = {
 		months = @MTTHMEDIUM
 		modifier = {
 			factor = 5
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 		modifier = {
 			factor = 2
@@ -4055,10 +3965,7 @@ country_event = {
 			has_country_flag = early_space_age
 			has_country_flag = mem_lunar_age
 		}
-		NOR = {
-			has_ethic = ethic_authoritarian
-			has_ethic = ethic_fanatic_authoritarian
-		}
+		is_authoritarian = no
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		exists = home_planet
@@ -4250,10 +4157,7 @@ country_event = {
 		months = @MTTHMEDIUM
 		modifier = {
 			factor = 3
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 		modifier = {
 			factor = 0.5
@@ -4269,10 +4173,7 @@ country_event = {
 			has_country_flag = early_space_age
 			has_country_flag = mem_lunar_age
 		}
-		OR = {
-			has_ethic = ethic_materialist
-			has_ethic = ethic_fanatic_materialist
-		}
+		is_materialist = yes
 		NOT = { has_country_flag = primitives_politics }
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		exists = home_planet
@@ -4665,10 +4566,8 @@ country_event = {
 		else_if = {
 			limit = {
 				NOR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+					is_xenophile = yes
+					is_xenophobe = yes
 				}
 			}
 			random_list = {
@@ -4713,12 +4612,11 @@ country_event = {
 		text = "primitivesexpanded.301.b.desc"
 		trigger = {
 			FROM = {
-				NOT = { has_country_flag = renaissance_age }
-				NOT = { has_country_flag = primitives_fanatic_purifier }
-				OR = {
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
+				NOR = {
+					has_country_flag = renaissance_age
+					has_country_flag = primitives_fanatic_purifier
 				}
+				is_xenophile = yes
 			}
 		}
 	}
@@ -4727,11 +4625,12 @@ country_event = {
 		text = "primitivesexpanded.301.c.desc"
 		trigger = {
 			FROM = {
-				NOT = { has_country_flag = renaissance_age }
-				NOT = { has_country_flag = primitives_fanatic_purifier }
+				NOR = {
+					has_country_flag = renaissance_age
+					has_country_flag = primitives_fanatic_purifier
+				}
 				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+					is_xenophobe = yes
 				}
 			}
 		}
@@ -4741,17 +4640,14 @@ country_event = {
 		text = "primitivesexpanded.301.d.desc"
 		trigger = {
 			FROM = {
-				NOT = { has_country_flag = renaissance_age }
-				NOT = { has_country_flag = primitives_fanatic_purifier }
-				OR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-				}
 				NOR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
+					has_country_flag = renaissance_age
+					has_country_flag = primitives_fanatic_purifier
+				}
+				is_spiritualist = yes
+				NOR = {
+					is_xenophobe = yes
+					is_xenophile = yes
 				}
 			}
 		}
@@ -4761,15 +4657,14 @@ country_event = {
 		text = "primitivesexpanded.301.e.desc"
 		trigger = {
 			FROM = {
-				NOT = { has_country_flag = renaissance_age }
-				NOT = { has_country_flag = primitives_fanatic_purifier }
 				NOR = {
-					has_ethic = ethic_spiritualist
-					has_ethic = ethic_fanatic_spiritualist
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-					has_ethic = ethic_xenophile
-					has_ethic = ethic_fanatic_xenophile
+					has_country_flag = renaissance_age
+					has_country_flag = primitives_fanatic_purifier
+				}
+				NOR = {
+					is_spiritualist = yes
+					is_xenophobe = yes
+					is_xenophile = yes
 				}
 			}
 		}
@@ -4861,10 +4756,7 @@ country_event = {
 			}
 		}
 		has_ethic = ethic_fanatic_xenophobe
-		NOR = {
-			has_ethic = ethic_pacifist
-			has_ethic = ethic_fanatic_pacifist
-		}
+		is_pacifist = no
 		home_planet = {
 			has_observation_outpost = yes
 			solar_system = {
@@ -4961,10 +4853,7 @@ country_event = {
 			exists = observation_outpost_owner
 			observation_outpost_owner = {
 				NOT = { has_country_flag = mem_primitives_religion_o }
-				NOR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = no
 			}
 			solar_system = {
 				NOT = { has_star_flag = sol }
@@ -5020,10 +4909,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -5179,10 +5066,8 @@ country_event = {
 		
 		trigger = {
 			NOR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_spiritualist = yes
+				is_materialist = yes
 			}
 		}
 	}
@@ -5202,10 +5087,8 @@ country_event = {
 		trigger = {
 			is_spiritualist = yes
 			NOR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_xenophile = yes
+				is_xenophobe = yes
 			}
 		}
 	}
@@ -5419,10 +5302,7 @@ country_event = {
 						FROM = {
 							exists = owner
 							owner = {
-								OR = {
-									has_ethic = ethic_pacifist
-									has_ethic = ethic_fanatic_pacifist
-								}
+								is_pacifist = yes
 							}
 						}
 					}
@@ -5431,10 +5311,7 @@ country_event = {
 						FROM = {
 							exists = owner
 							owner = {
-								OR = {
-									has_ethic = ethic_xenophile
-									has_ethic = ethic_fanatic_xenophile
-								}
+								is_xenophile = yes
 							}
 						}
 					}
@@ -5443,10 +5320,7 @@ country_event = {
 						FROM = {
 							exists = owner
 							owner = {
-								OR = {
-									has_ethic = ethic_militarist
-									has_ethic = ethic_fanatic_militarist
-								}
+								is_militarist = yes
 							}
 						}
 					}
@@ -5455,10 +5329,7 @@ country_event = {
 						FROM = {
 							exists = owner
 							owner = {
-								OR = {
-									has_ethic = ethic_xenophobe
-									has_ethic = ethic_fanatic_xenophobe
-								}
+								is_xenophobe = yes
 							}
 						}
 					}
@@ -5574,10 +5445,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 5
-			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
-			}
+			is_egalitarian = yes
 		}
 	}
 	
@@ -5604,16 +5472,17 @@ country_event = {
 		}
 		NOR = {
 			has_ethic = ethic_gestalt_consciousness
-			has_ethic = ethic_xenophobe
-			has_ethic = ethic_fanatic_xenophobe
+			is_xenophobe = yes
 		}
 		home_planet = {
 			has_observation_outpost = yes
 			exists = observation_outpost_owner
 			observation_outpost_owner = {
 				has_country_flag = primitives_discovered_you
-				NOT = { has_country_flag = primitives_asylum }
-				NOT = { has_policy_flag = refugees_not_allowed } 
+				NOR = {
+					has_country_flag = primitives_asylum
+					has_policy_flag = refugees_not_allowed
+				} 
 				any_owned_planet = {
 					is_under_colonization = no
 					is_controlled_by = owner
@@ -5731,8 +5600,7 @@ country_event = {
 		}
 		NOR = {
 			has_ethic = ethic_gestalt_consciousness
-			has_ethic = ethic_xenophobe
-			has_ethic = ethic_fanatic_xenophobe
+			is_xenophobe = yes
 		}
 		home_planet = {
 			has_observation_outpost = yes
@@ -5741,10 +5609,9 @@ country_event = {
 				has_country_flag = primitives_discovered_you
 				NOR = {
 					has_ethic = ethic_gestalt_consciousness
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
+					is_xenophobe = yes
+					has_country_flag = primitive_ethic_shift
 				}
-				NOT = { has_country_flag = primitive_ethic_shift }
 			}
 			solar_system = {
 				NOT = { has_star_flag = sol }
@@ -5760,10 +5627,7 @@ country_event = {
 					OR = {
 						capital_scope = {
 							observation_outpost_owner = {
-								NOR = {
-									has_ethic = ethic_xenophile
-									has_ethic = ethic_fanatic_xenophile
-								}
+								is_xenophile = no
 							}
 						}
 						has_ethic = ethic_fanatic_xenophile
@@ -5779,10 +5643,7 @@ country_event = {
 					OR = {
 						capital_scope = {
 							observation_outpost_owner = {
-								NOR = {
-									has_ethic = ethic_authoritarian
-									has_ethic = ethic_fanatic_authoritarian
-								}
+								is_authoritarian = no
 							}
 						}
 						has_ethic = ethic_fanatic_authoritarian
@@ -5798,10 +5659,7 @@ country_event = {
 					OR = {
 						capital_scope = {
 							observation_outpost_owner = {
-								NOR = {
-									has_ethic = ethic_egalitarian
-									has_ethic = ethic_fanatic_egalitarian
-								}
+								is_egalitarian = no
 							}
 						}
 						has_ethic = ethic_fanatic_egalitarian
@@ -5817,10 +5675,7 @@ country_event = {
 					OR = {
 						capital_scope = {
 							observation_outpost_owner = {
-								NOR = {
-									has_ethic = ethic_materialist
-									has_ethic = ethic_fanatic_materialist
-								}
+								is_materialist = no
 							}
 						}
 						has_ethic = ethic_fanatic_materialist
@@ -5836,10 +5691,7 @@ country_event = {
 					OR = {
 						capital_scope = {
 							observation_outpost_owner = {
-								NOR = {
-									has_ethic = ethic_spiritualist
-									has_ethic = ethic_fanatic_spiritualist
-								}
+								is_spiritualist = no
 							}
 						}
 						has_ethic = ethic_fanatic_spiritualist
@@ -5855,10 +5707,7 @@ country_event = {
 					OR = {
 						capital_scope = {
 							observation_outpost_owner = {
-								NOR = {
-									has_ethic = ethic_militarist
-									has_ethic = ethic_fanatic_militarist
-								}
+								is_militarist = no
 							}
 						}
 						has_ethic = ethic_fanatic_militarist
@@ -5874,10 +5723,7 @@ country_event = {
 					OR = {
 						capital_scope = {
 							observation_outpost_owner = {
-								NOR = {
-									has_ethic = ethic_pacifist
-									has_ethic = ethic_fanatic_pacifist
-								}
+								is_pacifist = no
 							}
 						}
 						has_ethic = ethic_fanatic_pacifist

@@ -1909,7 +1909,7 @@ d_presidium = {
 			exists = owner
 			owner = {
 				is_gestalt = no
-				NOT = { is_megacorp = yes }
+				is_megacorp = no
 			}
 		}
 		modifier = {

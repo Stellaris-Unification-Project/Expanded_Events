@@ -14,10 +14,7 @@ country_event = {
 	hide_window = yes
 	
 	trigger = {
-		OR = {
-			has_ethic = ethic_xenophobe
-			has_ethic = ethic_fanatic_xenophobe
-		}
+		is_xenophobe = yes
 		any_owned_fleet = {
 			exists = leader
 			leader = { leader_class = admiral }
@@ -92,10 +89,8 @@ country_event = {
 		trigger = {
 			NOT = { has_ethic = ethic_fanatic_pacifist }
 			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
+				is_militarist = yes
+				is_xenophobe = yes
 			}
 		}
 		FROM = { country_event = { id = diplomatic.4 } }
@@ -266,29 +261,19 @@ country_event = {
 						is_subject = yes
 					}
 					OR = {
-						has_ethic = ethic_materialist
-						has_ethic = ethic_fanatic_materialist
+						is_materialist = yes
 						AND = {
 							ROOT = {
 								NOT = { has_modifier = alien_genome_research }
 								has_technology = tech_genome_mapping
 							}
-							OR = {
-								has_ethic = ethic_xenophobe
-								has_ethic = ethic_fanatic_xenophobe
-							}
+							is_xenophobe = yes
 						}
 						AND = {
 							#exists = leader
-							OR = {
-								has_ethic = ethic_spiritualist
-								has_ethic = ethic_fanatic_spiritualist
-							}
+							is_spiritualist = yes
 							ROOT = {
-								NOR = {
-									has_ethic = ethic_spiritualist
-									has_ethic = ethic_fanatic_spiritualist
-								}
+								is_spiritualist = no
 							}
 						}
 					}
@@ -315,29 +300,19 @@ country_event = {
 							is_subject = yes
 						}
 						OR = {
-							has_ethic = ethic_materialist
-							has_ethic = ethic_fanatic_materialist
+							is_materialist = yes
 							AND = {
 								ROOT = {
 									NOT = { has_modifier = alien_genome_research }
 									has_technology = tech_genome_mapping
 								}
-								OR = {
-									has_ethic = ethic_xenophobe
-									has_ethic = ethic_fanatic_xenophobe
-								}
+								is_xenophobe = yes
 							}
 							AND = {
 								#exists = leader
-								OR = {
-									has_ethic = ethic_spiritualist
-									has_ethic = ethic_fanatic_spiritualist
-								}
+								is_spiritualist = yes
 								ROOT = {
-									NOR = {
-										has_ethic = ethic_spiritualist
-										has_ethic = ethic_fanatic_spiritualist
-									}
+									is_spiritualist = no
 								}
 							}
 						}
@@ -653,8 +628,8 @@ country_event = {
 	trigger = {
 		any_neighbor_country = {
 			has_communications = root
-			NOT = { has_authority = auth_machine_intelligence }
 			NOR = {
+				has_authority = auth_machine_intelligence
 				is_at_war_with = ROOT
 				is_subject = yes
 			}
@@ -670,7 +645,7 @@ country_event = {
 					}
 					any_system_planet = {
 						exists = owner
-						owner = { is_same_value = ROOT }
+						is_owned_by = ROOT
 						num_pops > 3
 						any_owned_pop = { is_same_species = owner }
 					}
@@ -684,8 +659,8 @@ country_event = {
 		random_neighbor_country = {
 			limit = {
 				has_communications = root
-				NOT = { has_authority = auth_machine_intelligence }
 				NOR = {
+					has_authority = auth_machine_intelligence
 					is_at_war_with = ROOT
 					is_subject = yes
 				}
@@ -700,7 +675,7 @@ country_event = {
 						}
 						any_system_planet = {
 							exists = owner
-							owner = { is_same_value = ROOT }
+							is_owned_by = ROOT
 							num_pops > 3
 							any_owned_pop = { is_same_species = owner }
 						}
@@ -722,7 +697,7 @@ country_event = {
 									max_jumps = 4
 								}
 								exists = space_owner
-								space_owner = { is_same_value = event_target:music_origin_country }
+								is_owned_by = event_target:music_origin_country
 							}
 						}
 					}
@@ -744,8 +719,8 @@ country_event = {
 					NOR = {
 						has_ethic = ethic_xenophile
 						pop_has_trait = trait_mechanical
+						has_modifier = alien_music
 					}
-					NOT = { has_modifier = alien_music }
 				}
 				add_modifier = {
 					modifier = "alien_music"
@@ -755,8 +730,8 @@ country_event = {
 			}
 			random_owned_pop = {
 				limit = {
-					NOT = { has_modifier = alien_music }
 					NOR = {
+						has_modifier = alien_music
 						has_ethic = ethic_xenophile
 						pop_has_trait = trait_mechanical
 					}
@@ -769,8 +744,8 @@ country_event = {
 			}
 			random_owned_pop = {
 				limit = {
-					NOT = { has_modifier = alien_music }
 					NOR = {
+						has_modifier = alien_music
 						has_ethic = ethic_xenophile
 						pop_has_trait = trait_mechanical
 					}

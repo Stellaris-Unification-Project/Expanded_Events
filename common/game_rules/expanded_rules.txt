@@ -8,10 +8,14 @@
 #This = pop
 can_generate_leader_from_pop = {
 	has_citizenship_rights = yes
-	NOT = { has_trait = trait_syncretic_proles }
-	NOT = { has_trait = trait_tree_caretaker }
-	NOT = { has_trait = trait_nerve_stapled }
-	NOT = { has_trait = trait_memorex_comatos }
+	NOR = {
+		has_trait = trait_syncretic_proles
+		has_trait = trait_tree_caretaker
+	}
+	NOR = {
+		has_trait = trait_nerve_stapled
+		has_trait = trait_memorex_comatos
+	}
 	NOT = { has_trait = trait_infested_basic }
 	OR = {
 		is_robot_pop = no

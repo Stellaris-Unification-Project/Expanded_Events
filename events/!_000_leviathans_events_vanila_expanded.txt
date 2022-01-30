@@ -649,8 +649,8 @@ country_event = {
 							exists = owner
 							owner = {
 								is_guardian_country = yes
-								NOT = { is_country_type = guardian }
-								NOT = {
+								NOR = {
+									is_country_type = guardian
 									has_communications = root
 								}
 							}
@@ -661,8 +661,8 @@ country_event = {
 							exists = owner
 							owner = {
 								is_guardian_country = yes
-								NOT = { is_country_type = guardian }
-								NOT = {
+								NOR = {
+									is_country_type = guardian
 									has_communications = root
 								}
 							}

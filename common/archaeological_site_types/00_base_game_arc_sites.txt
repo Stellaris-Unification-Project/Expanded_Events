@@ -200,8 +200,10 @@ mutation_vats = {
 		modifier = {
 			add = 100
 			is_nuked = yes
-			NOT = { has_planet_flag = ratling_planet }
-			NOT = { has_planet_flag = nuked_planet_anomalies_disabled }
+			NOR = {
+				has_planet_flag = ratling_planet
+				has_planet_flag = nuked_planet_anomalies_disabled
+			}
 		}
 	}
 	allow = {

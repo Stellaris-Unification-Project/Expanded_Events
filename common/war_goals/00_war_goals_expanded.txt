@@ -140,8 +140,8 @@ wg_stop_robots = {
 		}
 	}
 	possible = {
-		NOT = { has_policy_flag = no_wars }
 		NOR = {
+			has_policy_flag = no_wars
 			has_policy_flag = ai_full_rights
 			has_policy_flag = ai_servitude
 		}
@@ -257,8 +257,8 @@ wg_kill_robots = {
 		}
 	}
 	possible = {
-		NOT = { has_policy_flag = no_wars }
 		NOR = {
+			has_policy_flag = no_wars
 			has_policy_flag = ai_full_rights
 			has_policy_flag = ai_servitude
 		}

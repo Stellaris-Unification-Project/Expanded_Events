@@ -135,11 +135,13 @@ decision_pleasure_palace = {
 	
 	potential = {
 		is_capital = no
-		NOT = { has_modifier = penal_colony }
-		NOT = { has_modifier = slave_colony }
-		OR = {
-			NOT = { has_global_flag = expanded_megastructures_installed }
-			NOT = { has_modifier = fortified_habitat }
+		NOR = {
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+		}
+		NAND = {
+			has_global_flag = expanded_megastructures_installed
+			has_modifier = fortified_habitat
 		}
 		is_planet_class = pc_habitat
 		owner = { 
@@ -352,8 +354,8 @@ decision_mycorrhiza = {
 		NOR = {
 			is_planet_class = pc_nuked
 			is_planet_class = pc_relic
+			has_planet_flag = decision_mycorrhiza_enacted
 		}
-		NOT = { has_planet_flag = decision_mycorrhiza_enacted }
 		owner = {
 			has_country_flag = decision_mycorrhiza_unlocked
 		}

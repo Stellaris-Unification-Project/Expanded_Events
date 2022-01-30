@@ -75,10 +75,8 @@ event = {
 							has_global_flag = no_war_in_heaven
 							NOT = {
 								any_country = {
-									OR = {
-										is_country_type = fallen_empire
-										is_country_type = awakened_fallen_empire
-									}
+									
+										is_fallen_empire = yes
 								}
 							}
 						}
@@ -157,10 +155,8 @@ event = {
 							has_global_flag = no_war_in_heaven
 							NOT = {
 								any_country = {
-									OR = {
-										is_country_type = fallen_empire
-										is_country_type = awakened_fallen_empire
-									}
+									
+										is_fallen_empire = yes
 								}
 							}
 						}
@@ -251,10 +247,8 @@ event = {
 							has_global_flag = no_war_in_heaven
 							NOT = {
 								any_country = {
-									OR = {
-										is_country_type = fallen_empire
-										is_country_type = awakened_fallen_empire
-									}
+									
+										is_fallen_empire = yes
 								}
 							}
 						}

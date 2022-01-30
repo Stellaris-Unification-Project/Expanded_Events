@@ -88,7 +88,7 @@ planet_event = {
 		if = {
 			limit = { 
 				has_owner = yes
-				owner = { is_same_value = event_target:doomsday_owner }
+				is_owned_by = event_target:doomsday_owner
 			}
 			set_planet_flag = doomsday_still_original_owner
 			if = {

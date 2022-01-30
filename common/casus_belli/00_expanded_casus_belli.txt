@@ -43,8 +43,8 @@ cb_stop_robots = {
 		FROM = { has_country_flag = fe_task_stop_robots_target }
 	}
 	is_valid = {
-		NOT = { has_policy_flag = no_wars }
 		NOR = {
+			has_policy_flag = no_wars
 			has_policy_flag = ai_full_rights
 			has_policy_flag = ai_servitude
 		}

@@ -125,8 +125,7 @@ country_event = {
 						AND = {
 							exists = space_owner 
 							space_owner = {
-								NOT = { is_country_type = fallen_empire }
-								NOT = { is_country_type = awakened_fallen_empire }
+								is_fallen_empire = no
 								NOT = { has_closed_borders = ROOT }
 							}
 						}
@@ -148,8 +147,7 @@ country_event = {
 						AND = {
 							exists = space_owner 
 							space_owner = {
-								NOT = { is_country_type = fallen_empire }
-								NOT = { is_country_type = awakened_fallen_empire }
+								is_fallen_empire = no
 								NOT = { has_closed_borders = ROOT }
 							}
 						}
@@ -171,8 +169,7 @@ country_event = {
 						AND = {
 							exists = space_owner 
 							space_owner = {
-								NOT = { is_country_type = fallen_empire }
-								NOT = { is_country_type = awakened_fallen_empire }
+								is_fallen_empire = no
 								NOT = { has_closed_borders = ROOT }
 							}
 						}
@@ -194,8 +191,7 @@ country_event = {
 						AND = {
 							exists = space_owner 
 							space_owner = {
-								NOT = { is_country_type = fallen_empire }
-								NOT = { is_country_type = awakened_fallen_empire }
+								is_fallen_empire = no
 								NOT = { has_closed_borders = ROOT }
 							}
 						}
@@ -217,8 +213,7 @@ country_event = {
 						AND = {
 							exists = space_owner 
 							space_owner = {
-								NOT = { is_country_type = fallen_empire }
-								NOT = { is_country_type = awakened_fallen_empire }
+								is_fallen_empire = no
 								NOT = { has_closed_borders = ROOT }
 							}
 						}
@@ -240,8 +235,7 @@ country_event = {
 						AND = {
 							exists = space_owner 
 							space_owner = {
-								NOT = { is_country_type = fallen_empire }
-								NOT = { is_country_type = awakened_fallen_empire }
+								is_fallen_empire = no
 								NOT = { has_closed_borders = ROOT }
 							}
 						}
@@ -263,8 +257,7 @@ country_event = {
 						AND = {
 							exists = space_owner 
 							space_owner = {
-								NOT = { is_country_type = fallen_empire }
-								NOT = { is_country_type = awakened_fallen_empire }
+								is_fallen_empire = no
 								NOT = { has_closed_borders = ROOT }
 							}
 						}
@@ -303,8 +296,7 @@ country_event = {
 							AND = {
 								exists = space_owner 
 								space_owner = {
-									NOT = { is_country_type = fallen_empire }
-									NOT = { is_country_type = awakened_fallen_empire }
+									is_fallen_empire = no
 									NOT = { has_closed_borders = ROOT }
 								}
 							}
@@ -331,8 +323,7 @@ country_event = {
 							AND = {
 								exists = space_owner 
 								space_owner = {
-									NOT = { is_country_type = fallen_empire }
-									NOT = { is_country_type = awakened_fallen_empire }
+									is_fallen_empire = no
 									NOT = { has_closed_borders = ROOT }
 								}
 							}
@@ -359,8 +350,7 @@ country_event = {
 							AND = {
 								exists = space_owner 
 								space_owner = {
-									NOT = { is_country_type = fallen_empire }
-									NOT = { is_country_type = awakened_fallen_empire }
+									is_fallen_empire = no
 									NOT = { has_closed_borders = ROOT }
 								}
 							}
@@ -387,8 +377,7 @@ country_event = {
 							AND = {
 								exists = space_owner 
 								space_owner = {
-									NOT = { is_country_type = fallen_empire }
-									NOT = { is_country_type = awakened_fallen_empire }
+									is_fallen_empire = no
 									NOT = { has_closed_borders = ROOT }								
 								}
 							}
@@ -415,8 +404,7 @@ country_event = {
 							AND = {
 								exists = space_owner 
 								space_owner = {
-									NOT = { is_country_type = fallen_empire }
-									NOT = { is_country_type = awakened_fallen_empire }
+									is_fallen_empire = no
 									NOT = { has_closed_borders = ROOT }	
 								}
 							}
@@ -443,8 +431,7 @@ country_event = {
 							AND = {
 								exists = space_owner 
 								space_owner = {
-									NOT = { is_country_type = fallen_empire }
-									NOT = { is_country_type = awakened_fallen_empire }
+									is_fallen_empire = no
 									NOT = { has_closed_borders = ROOT }	
 								}
 							}
@@ -471,8 +458,7 @@ country_event = {
 							AND = {
 								exists = space_owner 
 								space_owner = {
-									NOT = { is_country_type = fallen_empire }
-									NOT = { is_country_type = awakened_fallen_empire }
+									is_fallen_empire = no
 									NOT = { has_closed_borders = ROOT }	
 								}
 							}

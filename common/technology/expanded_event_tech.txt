@@ -250,9 +250,9 @@ tech_space_elevator = {
 					host_has_dlc = "Utopia"
 					NOT = { has_technology = tech_habitat_1 }
 				}
-				AND = {
-					NOT = { host_has_dlc = "Utopia" }
-					NOT = { has_technology = tech_starbase_5 }
+				NOR = {
+					host_has_dlc = "Utopia" 
+					has_technology = tech_starbase_5 
 				}
 			}
 		}

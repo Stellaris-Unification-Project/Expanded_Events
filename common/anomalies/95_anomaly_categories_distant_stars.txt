@@ -17,7 +17,7 @@ DISTAR_WRECK_CAT = {
 					has_communications = from.owner
 					NOR = {
 						is_at_war_with = from.owner
-						is_same_value = from.owner
+						is_same_empire = from.owner
 					}
 				}
 			}
@@ -362,7 +362,7 @@ DISTAR_RUM_CAT = {
 						NOR = {
 							has_ethic = ethic_gestalt_consciousness
 							is_at_war_with = from.owner
-							is_same_value = from.owner
+							is_same_empire = from.owner
 						}
 					}
 				}
@@ -940,8 +940,8 @@ DISTAR_ZONE_CAT = {
 			NOR = {
 				has_modifier = ancient_world
 				has_modifier = ancient_cities
+				exists = owner
 			}
-			NOT = { exists = owner }
 			NOT = {
 				from.owner = { has_country_flag = the_zone_spawned }
 			}
@@ -1064,7 +1064,7 @@ DISTAR_PHASE_CAT = {
 						AND = {
 							exists = space_owner
 							space_owner = {
-								NOT = { is_same_value = root.owner }
+								NOT = { is_same_empire = root.owner }
 							}
 						}
 					}
@@ -1080,7 +1080,7 @@ DISTAR_PHASE_CAT = {
 					has_modifier = phaseshifted
 					exists = space_owner
 					space_owner = {
-						is_same_value = root.owner
+						is_same_empire = root.owner
 					}
 				}
 			}

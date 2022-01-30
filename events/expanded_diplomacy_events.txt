@@ -93,8 +93,10 @@ country_event = {
 			}
 		}
 		any_owned_planet = {
-			NOT = { has_modifier = war_protests }
-			NOT = { has_modifier = crushed_war_protests }
+			NOR = {
+				has_modifier = war_protests
+				has_modifier = crushed_war_protests
+			}
 			count_owned_pop = {
 				limit = {
 					pop_has_ethic = ethic_pacifist
@@ -109,8 +111,10 @@ country_event = {
 	immediate = {
 		random_owned_planet = {
 			limit = {
-				NOT = { has_modifier = war_protests }
-				NOT = { has_modifier = crushed_war_protests }
+				NOR = {
+					has_modifier = war_protests
+					has_modifier = crushed_war_protests
+				}
 				count_owned_pop = {
 					limit = {
 					pop_has_ethic = ethic_pacifist
@@ -235,8 +239,10 @@ country_event = {
 			is_war_participant = { who = root side = attackers }
 		}
 		any_owned_planet = {
-			NOT = { has_modifier = war_protests }
-			NOT = { has_modifier = crushed_war_protests }
+			NOR = {
+				has_modifier = war_protests
+				has_modifier = crushed_war_protests
+			}
 			count_owned_pop = {
 				limit = {
 					pop_has_ethic = ethic_pacifist
@@ -252,8 +258,10 @@ country_event = {
 		add_modifier = { modifier = country_war_protests days = 3600 }
 		random_owned_planet = {
 			limit = {
-				NOT = { has_modifier = war_protests }
-				NOT = { has_modifier = crushed_war_protests }
+				NOR = {
+					has_modifier = war_protests
+					has_modifier = crushed_war_protests
+				}
 				count_owned_pop = {
 					limit = {
 					pop_has_ethic = ethic_pacifist
@@ -267,8 +275,10 @@ country_event = {
 		}
 		random_owned_planet = {
 			limit = {
-				NOT = { has_modifier = war_protests }
-				NOT = { has_modifier = crushed_war_protests }
+				NOR = {
+					has_modifier = war_protests
+					has_modifier = crushed_war_protests
+				}
 				count_owned_pop = {
 					limit = {
 					pop_has_ethic = ethic_pacifist
@@ -282,8 +292,10 @@ country_event = {
 		}
 		random_owned_planet = {
 			limit = {
-				NOT = { has_modifier = war_protests }
-				NOT = { has_modifier = crushed_war_protests }
+				NOR = {
+					has_modifier = war_protests
+					has_modifier = crushed_war_protests
+				}
 				count_owned_pop = {
 					limit = {
 					pop_has_ethic = ethic_pacifist
@@ -303,8 +315,10 @@ country_event = {
 			add_modifier = { modifier = country_war_protests days = 3600 }
 			random_owned_planet = {
 				limit = {
-					NOT = { has_modifier = war_protests }
-					NOT = { has_modifier = crushed_war_protests }
+					NOR = {
+						has_modifier = war_protests
+						has_modifier = crushed_war_protests
+					}
 					count_owned_pop = {
 						limit = {
 						pop_has_ethic = ethic_pacifist
@@ -318,8 +332,10 @@ country_event = {
 			}
 			random_owned_planet = {
 				limit = {
-					NOT = { has_modifier = war_protests }
-					NOT = { has_modifier = crushed_war_protests }
+					NOR = {
+						has_modifier = war_protests
+						has_modifier = crushed_war_protests
+					}
 					count_owned_pop = {
 						limit = {
 						pop_has_ethic = ethic_pacifist
@@ -333,8 +349,10 @@ country_event = {
 			}
 			random_owned_planet = {
 				limit = {
-					NOT = { has_modifier = war_protests }
-					NOT = { has_modifier = crushed_war_protests }
+					NOR = {
+						has_modifier = war_protests
+						has_modifier = crushed_war_protests
+					}
 					count_owned_pop = {
 						limit = {
 						pop_has_ethic = ethic_pacifist
